@@ -58,4 +58,8 @@ print("\n#7 print_first_word(broken_words):", print_first_word(broken_words))
 
 print("\n#8 print_last_word(broken_words):", print_last_word(broken_words))
 
-print("\n#9 sort_sentence")
+print("\n#9 sort_sentence(stuff_words):", sort_sentence(stuff_words))
+
+print('\n#10 print_first_and_last(stuff_words)', print_first_and_last(stuff_words))
+
+print('\n#11 print_first_and_last_sorted(stuff_words)', print_first_and_last_sorted(stuff_words))
