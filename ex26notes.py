@@ -105,11 +105,27 @@ txt_again = open(file_again)
 # when this program is run.
 print(txt_again_read())
 
-
+# These 3 lines are intended to print strings.
+# PROBLEMS W/ THESE LINES:
+#1 the comma within the string, on the first line,
+# is being read by python as a single quote which is
+# causing python to cut the string of prematurely.
+# The comma needs to be preceded by a backslash so
+# that it can be escaped.
+#2 The third line shouldn't be indented.
+#3 All three of these lines should be in only
+# one print statement, formated with tripple quotes
+# (''' ''') or tripple double quotes (""" """).
 print('Let's practice everything.')
 print('You\'d need to know \'bout escapes
       with \\ that do \n newlines and \t tabs.')
 
+# This line is intended to create a var 'poem' with
+# the value of a a string that will be formated into
+# multiple lines, newlines, and tabbed, the way that
+# the programmer desires, due to the use of tripple
+# double quotes.
+# PROBLEMS W/ THIS LINE: none.
 poem = """
 \tThe lovely world
 with logic so firmly planted
@@ -119,8 +135,21 @@ and requires an explanation
 \n\t\twhere there is none.
 """
 
+# This line is intended to print a string.
+# PROBLEMS W/ THIS LINE: the programmer forgot
+# to close the string within the parentheses.
 print("--------------)
+# This line is intended to print the value of
+# var poem.
+# PROBLEMS W/ THIS LINE: none.
 print(poem)
+# This line is intended to print a string.
+# PROBLEMS W/ THIS LINE: the programmer forgot to
+# enclose the intended string in a double quote
+# symbol and thus created a var name
+# '(--------------' with no value that will return
+# an error message when the script is run in the
+# terminal.
 print(--------------")
 
 
