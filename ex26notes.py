@@ -46,11 +46,29 @@ weight = input()
 # the number of their age + the word 'years'.
 print(f"So, you're {age} old, {height} tall and {weight} heavy.")
 
+# This line is intended to import a text file into
+# the script.
+# PROBLEMS W/ THIS LINE: There isn't an import
+# statement preceding this line.
 script, filename = argv
 
+# This line is intended to open the imported text
+# file and assigne the value of the oppened file
+# object to var 'txt'.
+# PROBLEMS W/ THIS LINE: the argument name that the
+# file object has been assigned to is spelled wrong.
 txt = open(filenme)
 
+# This line is intended to print a formated string
+# with the name of the imported file object inserted
+# into the placeholder.
+# PROBLEMS W/ THIS LINE: There is not a 'f' symbol
+# preceding the formated string.
 print("Here's your file {filename}:")
+# This line is intended to read and then print the
+# value of the file object attached to var 'txt'.
+# PROBLEMS W/ THIS LINE: The name of the var is
+# misspelled.
 print(tx.read())
 
 print("Type the filename again:")
