@@ -71,11 +71,38 @@ print("Here's your file {filename}:")
 # misspelled.
 print(tx.read())
 
+# This line is intended to print a string that will
+# serve as an explanation to the user of the input
+# querry, for which they are being prompted by the
+# next line.
+# PROBLEMS W/ THIS LINE: None. Personally, if I were
+# to write this line and the next one, I would have
+# combined them into one line, using the string in
+# the print statement as the querry for the input.
 print("Type the filename again:")
+# This line is intended to create the var 'file_again'
+# and assign it an input provided by the user.
+# PROBLEMS W/ THIS LINE: none but also see above
+# "PROBLEMS W/ THIS LINE:" section.
 file_again = input("> ")
 
+# This line is intended to open the file object,
+# importd by the user via the input statement,
+# and assigne its value to var 'txt_again'.
+# PROBLEMS W/ THIS LINE: none.
 txt_again = open(file_again)
 
+# This line is inteded to read the value of the
+# opened file object attached to var 'txt_again',
+# thus returning that value to the script, and then
+# print that returned value.
+# PROBLEMS W/ THIS LINE: the 'read' command needs
+# to attache to the target object's name with a
+# '.' character. The progammer in this example has
+# accidentally used a '_' character instead which
+# creates an undefinged var name 'txt_again_read'
+# and will return an error message to the terminal
+# when this program is run.
 print(txt_again_read())
 
 
