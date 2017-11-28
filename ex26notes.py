@@ -152,30 +152,106 @@ print(poem)
 # terminal.
 print(--------------")
 
-
+# This line is intended to create the var 'five'
+# and assigns it the int value 5.
+# PROBLEMS W/ THIS LINE: The math doesn't add up
+# to the int value 5. There should be an int 6
+# following the '-' sign.
 five = 10 - 2 + 3 -
+# This line is intended to print a formated string
+# that incorporates the value of var 'five  into
+# a placeholder.
+# PROBLEMS W/ THIS LINE: The parentheses on the
+# print statement was left open on the end.
 print(f"This should be five: {five}"
 
+# This line is intended to create a function
+# 'secret_formula' with one designated arg named
+# 'started'.
+# PROBLEMS W/ THIS LINE: there is no ':' following
+# the first line of the function.
 def secret_formula(started)
+    # This line is intended to create a var named
+    # 'jelly_beans' within the function, with a
+    # value of 500 multiplied by the value of arg
+    # 'started'.
+    # PROBLEMS W/ THIS LINE: none.
     jelly_beans = started * 500
+    # This line is intended to create a var named
+    # 'jars' within the function, with a value of
+    # var 'jelly_beans'\'s value divided by 1000.
+    # PROBLEMS W/ THIS LINE: none.
     jars = jelly_beans / 1000
+    # This line is intended to create a var named
+    # 'crates' within the function, with a
+    # value of var 'jars'\'s value divided by 100.
+    # PROBLEMS W/ THIS LINE: There is no '/' symbol
+    # between var 'jars' and int 100.
     crates = jars  100
+    # This line is intended to return the value of
+    # var's jelly_beans, jars, crates to the computer.
+    # PROBLEMS W/ THIS LINE: none.
     return jelly_beans, jars, crates
 
-
+# This line is intended to create a var 'start_point'
+# with an int value of 10000.
+# PROBLEMS W/ THIS LINE: none.
 start_point = 10000
+# This line is intended to create the var's 'beans'
+# 'jars' and crates with the respecteve values of
+# the 3 returned values of function 'secret_formula'
+# with var 'start_point' passed into it as an arg.
+# PROBLEMS W/ THIS LINE: 'crates' is not specified
+# on the left side of the '=' symbol as a var name.
 beans, jars = secret_formula(start_point)
 
-# remember that this is another way to format a string
+# This line, aftar the note, is intended to print
+# a formated string using the ''.format()' command
+# with var 'start_point' passed into the command
+# so that its value will appear in the placeholder
+# brackets within the string.
+# PROBLEMS W/ THIS LINE: none.
+## remember that this is another way to format a string
 print("With a starting point of: {}".format(start_point))
-# it's just like with an f"" string
+# This line, aftar the note, is intended to print
+# a formated string with the values of var's 'beans',
+# 'jars' and 'crates' passed into the three placeholder
+# brackets withing the string, respectively.
+# PROBLEMS W/ THIS LINE: none.
+## remember that this is another way to format a string
+## it's just like with an f"" string
 print(f"We'd have {beans} beans, {jars} jars, and {crates} crates.")
 
+# This line is intended to divide the value of var
+# 'start_point' by the int 10 and then reasign the
+# output of that opperation to var start_point as
+# its new value.
+# PROBLEMS W/ THIS LINE: none but it would be better
+# written like this: start_point /= 10
 start_point = start_point / 10
 
+# This line is intended to print a string.
+# PROBLEMS W/ THIS LINE: none
 print("We can also do that this way:")
+# This line is intended to create a var 'formula'
+# with the value of function 'secret_formula'\'s value
+# with var 'start_point' passed into it as an arg.
+# PROBLEMS W/ THIS LINE: var 'start_point' has between
+# misspelled as 'startpoint'.
 formula = secret_formula(startpoint)
-# this is an easy way to apply a list to a format string
+# This line, below the note, is intended to print
+# a formated, using the '.format()' command with
+# var 'formula' passed into the command so that it's
+# returned values appear in the placeholders within
+# the string.
+# PROBLEMS W/ THIS LINE: None but there is still the
+# question of why the '.format()' command requires
+# var 'formula' to be preceded by a '*' symbol inorder
+# to work. When that character is removed the computer
+# returns this error message: "IndexError: tuple index
+# out of range". I still don't know what a tuple index
+# is...?
+## this is an easy way to apply a list to a format string
 print("We'd have {} beans, {} jars, and {} crates.".format(*formula))
 
 
