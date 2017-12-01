@@ -255,38 +255,100 @@ formula = secret_formula(startpoint)
 print("We'd have {} beans, {} jars, and {} crates.".format(*formula))
 
 
-
+# This line is intended to create the var 'people' and
+# and assign it the int value of 20.
+# PROBLEMS W/ THIS LINE: none.
 people = 20
+# This line is intended to create the var 'cats' and
+# and assign it the int value of 30.
+# PROBLEMS W/ THIS LINE: none.
 cates = 30
+# This line is intended to create the var 'dogs' and
+# and assign it the int value of 15.
+# PROBLEMS W/ THIS LINE: none.
 dogs = 15
 
-
+# This line is intended to create an 'if statement'
+# function that runs it's code if it's conditions are
+# met. The condition is that the value of var 'people'
+# be less than the value of var 'cats'.
+# PROBLEMS W/ THIS LINE: none.
 if people < cats:
+     # This line is intended to print a string.
+     # PROBLEMS W/ THIS LINE: The string is not
+     # enclosed in parentheses.
     print "Too many cats! The world is doomed!"
 
+# This line is intended to create an 'if statement'
+# function that runs it's code if it's conditions are
+# met. The condition is that the value of var 'people'
+# be more than the value of var 'cats'.
+# PROBLEMS W/ THIS LINE: The programmer has accidently
+# used the 'less than' symbol rather than the 'more
+# than symbol' they intended.
 if people < cats:
+    # This line is intended to print a string.
+    # PROBLEMS W/ THIS LINE: none.
     print("Not many cats! The world is saved!")
 
+# This line is intended to create an 'if statement'
+# function that runs it's code if it's conditions are
+# met. The condition is that the value of var 'people'
+# be less than the value of var 'dogs'.
+# PROBLEMS W/ THIS LINE: none.
 if people < dogs:
+    # This line is intended to print a string.
+    # PROBLEMS W/ THIS LINE: none.
     print("The world is drooled on!")
 
+# This line is intended to create an 'if statement'
+# function that runs it's code if it's conditions are
+# met. The condition is that the value of var 'people'
+# be greater than the value of var 'dogs'.
+# PROBLEMS W/ THIS LINE: The programmer has not ended
+# the function's first line with a ':' symbol.
 if people > dogs
+    # This line is intended to print a string.
+    # PROBLEMS W/ THIS LINE: none.
     print("The world is dry!")
 
-
+# This line is intended to add int 5 to the value
+# of var 'dogs'.
+# PROBLEMS W/ THIS LINE: none.
 dogs += 5
 
+# This line is intended to create an if statement
+# that runs it's code if its conditions are met.
+# The condition is that the value of var 'people'
+# be greator or equal to the value of var 'dogs'.
+# PROBLEMS W/ THIS LINE: none.
 if people >= dogs:
+    # This line is intended to print a string.
+    # PROBLEMS W/ THIS LINE: none.
     print("People are greater than or equal to dogs.")
 
+# This line is intended to create an 'if statement'
+# function that runs it's code if its conditions are
+# met. Its condition is that var 'people' be less than
+# or equal to var 'dogs'.
+# PROBLEMS WITH THIS LINE: it does not end with a ':'
+# symbol which cause it to not act as a function.
 if people <= dogs
+    # This line is intended to print a string.
+    # PROBLEMS W/ THIS LINE: The string is not closed
+    # out properly with a double quote.
     print("People are less than or equal to dogs.)
 
-
+# This line is intended to create an 'if statement'
+# function that runs it's code if its conditions are
+# met. This function's condition is that the value of
+# var 'people' be equal to the value of var 'dogs'.
+# PROBLEMS W/ THIS LINE: The programmer has used the
+# '=' symbol, which would assign the value of var
+# 'dogs'  to the value of var 'people', instead of the
+# '==' symbol, which asks the computer if var 'people'
+# and var 'dogs' have equivilent values.
 if people = dogs:
+    # This line is intended to print a string.
+    # PROBLEMS W/ THIS LINE: none.
     print("People are dogs.")
-
-
-
-# This line is intended to
-# PROBLEMS W/ THIS LINE:
