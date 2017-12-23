@@ -110,49 +110,126 @@ def bear_room():
             # This line changes the value of var 'bear_moved'
             # to 'True'.
             bear_moved = True
-            
+        # This line creates an 'elif' statement within
+        # an 'if-elif-else' block of code. It has two
+        # parameters for running its code. The first is
+        # that the value of var choice be equivilent to
+        # the string "taunt bear". The second is that
+        # the value of var 'bear_moved' evaluate to 'True'.
+        # Since the value of var 'bear_moved' is "False"
+        # This line of code will not run unless something
+        # changes the value of var 'bear_moved'.
         elif choice == "taunt bear" and bear_moved:
             # This line calls function 'dead' and passes
             # a string into it as an arg.
             dead("The bear gets pissed off and chews your leg off.")
+        # This line creates an 'elif' statement within
+        # an 'if-elif-else' block of code. It has two
+        # parameters for running its code. The first
+        # is that the value of var 'choice' must be string
+        # 'open door'. The second is that var 'bear_moved'
+        # must evaluate to 'True'. In this particular
+        # instance this second parameter works because the
+        # only way that the computer can get to this place
+        # in this script, and read this line of code, is
+        # to navigate through a series of branches in this
+        # while function that changes the value of var
+        # 'bear_moved' from 'False' to 'True'.
         elif choice == "open door" and bear_moved:
+            # This line calls function 'gold_room'.
             gold_room()
+        # This line creates an 'else' statement within
+        # an 'if-elif-else' block of code. It's parameter
+        # for running its code is that none of the other
+        # if or elif statement in the block of code run.
         else:
+            # This line of code prints a string.
             print("I got no idea what that means.")
 
-
+# This line of code creates function 'cthulhu_room'.
 def cthulhu_room():
+    # This line prints a string.
     print("Here you see the great evil Cthulhu.")
+    # This line prints a string.
     print("He, it, whatever stares at you and you go insane.")
+    # This line prints a string.
     print("Do you flee for your life or eat your head?")
 
+    # This line creates var 'choice' and gives it the
+    # value of an input from the user.
     choice = input("> ")
 
+    # This line creates an 'if' statement and
+    # begins an 'if-elif-else' block of code.
+    # This if statements parameter for running
+    # its code is that var 'choice' contain string
+    # "flee" in its value.
     if "flee" in choice:
+        # This line calls function 'start'.
         start()
+    # This line creates an 'elif' statement within
+    # an 'if-elif-else' block of code.
+    # This elif statements parameter for running
+    # its code is that var 'choice' contain string
+    # "head" in its value.
     elif "head" in choice:
+        # This line calls function 'dead' and passes
+        # a string into it as an arg.
         dead("Well that was tasty!")
+    # This line creates an 'else' statement within the
+    # if-elif-else block of code. It's parameter for
+    # running its code is that all of the if and elif
+    # statements not run their code.
     else:
+        # This line calls function 'cthulhu_room'.
         cthulhu_room()
 
-
+# Creates function 'dead' with arg 'why'.
 def dead(why):
+    # This line prints the passed in value of arg why
+    # and a string.
     print(why, "Good job!")
+    # Calls the imported 'exit' function which aborts
+    # the script.
     exit(0)
 
+# This line creates function 'start'.
 def start():
+    # This line prints a string.
     print("You are in a dark room.")
+    # This line prints a string.
     print("There is a door to your right and left.")
+    # This line prints a string.
     print("Which one do you take?")
 
+    # This line creates var 'choice' and gives it the
+    # value of an input from the user.
     choice = input("> ")
 
+    # This line creates an 'if' statement and
+    # begins an 'if-elif-else' block of code.
+    # This if statements parameter for running
+    # its code is that var 'choice' is equal to
+    # the value of the string "left".
     if choice == "left":
+        # This line calls function 'bear_room'.
         bear_room()
+    # This line creates an 'elif' statement within
+    # the 'if-elif-else' block of code.
+    # This elif statement's parameter for running
+    # its code is that var 'choice' is equal to
+    # the value of the string "right".
     elif choice == "right":
+        # This line calls function 'cthulhu_room'.
         cthulhu_room()
+    # This line creates an 'else' statement within the
+    # if-elif-else block of code. It's parameter for
+    # running its code is that all of the if and elif
+    # statements not run their code.
     else:
+        # This line calls function 'dead' and passes
+        # a string into it as an arg.
         dead("You stumble around the room until you starve.")
 
-
+# This line calls function 'start'.
 start()
