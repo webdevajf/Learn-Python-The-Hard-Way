@@ -35,3 +35,8 @@
     #7) The carpenter's workshop
     #8) The NE gaurdtower
     #9) The blacksmith's workshop
+
+#4 Var's bridge_problem_chain_explained & bridge_problem_gears_explained:
+#   -var's == 0 user has not been made aware of problem.
+#   -var's == 1 player made aware of problems, blacksmith and carpenter
+#   can be talked to about issues.
