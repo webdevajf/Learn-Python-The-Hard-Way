@@ -21,6 +21,7 @@ crew = []
 bridge_problem_chain_explained = 0
 bridge_problem_gears_explained = 0
 pully = ["rusty chain", "rotten gears"]
+gt_activated = []
 
 # This line creates function 'start' which
 # explaines the game.
@@ -239,19 +240,10 @@ def drawbridge_gaurdtower():
         else:
             drawbridge_gaurdtower()
 
-def nw_gaurd_tower():
-    print("bob")
-
 def stables():
     print("bob")
 
-def sw_gaurd_tower():
-    print("bob")
-
 def barricks():
-    print("bob")
-
-def ne_gaurd_tower():
     print("bob")
 
 def blacksmith():
@@ -277,9 +269,9 @@ def blacksmith():
             print("she will take it down but that she will need 4 peices of")
             print("metal to make a chain long enough for the drawbridge.")
             bridge_problem_chain_explained = 2
-            print(pully)
+            print("pully is: {pully}")
             pully.remove(str("rusty chain"))
-            print(pully)
+            print("now pully is: {pully}")
             blacksmith()
         else:
             blacksmith()
@@ -348,10 +340,84 @@ def blacksmith():
         else:
             blacksmith()
 
-def se_gaurd_tower():
+def carpenter():
     print("bob")
 
-def carpenter():
+def nw_gaurd_tower():
+    print("You are at the top of the north west gaurd tower. You find yourself")
+    print("next to a gaurd on duty. Looking over the tower's battlements you")
+    print("can see the sea of shambling zombies futilely trying to break into")
+    print("the castle.")
+
+    global bridge_problem_chain_explained
+
+    if bridge_problem_chain_explained <= 1:
+        print("You can either stay here and look aimlesly at the writhing hoard")
+        print("below you, shoot arrows at the zombies to relieve your boredom,")
+        print("or you can go back to the castle courtyard. What would you like")
+        print("to do?")
+        what_to_do = input("> ")
+        if "courtyard" in bridge_problem_chain_explained:
+            courtyard()
+        elif "shoot" in what_to_do or "arrows" in what_to_do or "relieve" in what_to_do or "boredom" in what_to_do:
+            print("You pick up a bow and a quiver of arrows. You pull out an")
+            print("arrow, knock it to the bow and pull the string back. You")
+            print("Sight along the arrow at the head of a particularly ugly and")
+            print("decomposed member of the walking dead and you let the arrow")
+            print("fly. There is a wet thud, which you can hear even over the,")
+            print("moaning of the undead, as the arrow slams through the zombies")
+            print("skull. It crumples to the ground and disapears under the sea")
+            print("of shambling, rotten boddies. You look up with a mischevious")
+            print("smile at the gaurd next to you expecting to see that you've")
+            print("impressed him with your marksmenship but are supprised to")
+            print("find him scowling at you. You realize then that even though")
+            print("he won't say it, because you outrank him, he's thinking that")
+            print("you've just waisted a precious arrow that can't be retrieved.")
+            print("You should quit showing off like a jackass and get back to")
+            print("work.")
+            nw_gaurd_tower()
+        else:
+            nw_gaurd_tower()
+    elif bridge_problem_chain_explained > 1 and "nw" not in gt_activated:
+        print("You can either stay here and look aimlesly at the writhing hoard")
+        print("below you, shoot arrows at the zombies to relieve your boredom,")
+        print("go back to the castle courtyard, or talk to the gaurd. What")
+        print("would you like to do?")
+        what_to_do = input("> ")
+        if "courtyard" in bridge_problem_chain_explained:
+            courtyard()
+        elif "shoot" in what_to_do or "arrows" in what_to_do or "relieve" in what_to_do or "boredom" in what_to_do:
+            print("You pick up a bow and a quiver of arrows. You pull out an")
+            print("arrow, knock it to the bow and pull the string back. You")
+            print("Sight along the arrow at the head of a particularly ugly and")
+            print("decomposed member of the walking dead and you let the arrow")
+            print("fly. There is a wet thud, which you can hear even over the,")
+            print("moaning of the undead, as the arrow slams through the zombies")
+            print("skull. It crumples to the ground and disapears under the sea")
+            print("of shambling, rotten boddies. You look up with a mischevious")
+            print("smile at the gaurd next to you expecting to see that you've")
+            print("impressed him with your marksmenship but are supprised to")
+            print("find him scowling at you. You realize then that even though")
+            print("he won't say it, because you outrank him, he's thinking that")
+            print("you've just waisted a precious arrow that can't be retrieved.")
+            print("You should quit showing off like a jackass and get back to")
+            print("work.")
+            nw_gaurd_tower()
+        elif "talk" in what_to_do or "gaurd" in what_to_do:
+            print()
+        else:
+            nw_gaurd_tower()
+    else:
+
+
+
+def sw_gaurd_tower():
+    print("bob")
+
+def ne_gaurd_tower():
+    print("bob")
+
+def se_gaurd_tower():
     print("bob")
 
 def keep():
