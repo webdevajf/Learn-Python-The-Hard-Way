@@ -44,7 +44,11 @@
 
 ## PROBLEMS TO SOLVE:
 
-#1
+#1 how to get the gaurd towers to NOT give you the option of taking the
+# soldiers metal weapons before you've talked with the blacksmith then, to
+# switch to giving you the option of taking those weapons once you have talked
+# to the blacsmith, and then to once again switch to not give you that option
+# once you have mined that particular tower of it's metal resources.
 
 
 ## QUESTIONS THAT NEED ANSWERING:
