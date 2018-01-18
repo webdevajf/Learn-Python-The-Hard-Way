@@ -15,6 +15,9 @@
 # This line creates var 'drabridge' and sets it
 # value equal to 'False'. Making it's value
 # 'True' is the object of the game.
+
+from sys import exit
+
 drawbridge = False
 inventory = []
 crew = []
