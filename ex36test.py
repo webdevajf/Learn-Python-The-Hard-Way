@@ -218,9 +218,12 @@ def ne_gaurd_tower():
 
 def se_gaurd_tower():
     print("\nYou are at the top of the south east gaurd tower. You find yourself")
-    print("next to a gaurd on duty. Looking over the tower's battlements you")
-    print("can see the sea of shambling zombies futilely trying to break into")
-    print("the castle.")
+    print("next to a gaurd on duty. Looking over the tower's battlements to the")
+    print("east you can see the sea of shambling zombies futilely trying to")
+    print("break into the castle. To the south you see the chasam over which you")
+    print("plan to make your escape. From time to time a zombie gets pushed over")
+    print("the chasm's edge by the weight of the hoard. They fall listless and")
+    print("uncomprehending to the impact of their second death.")
 
     global bridge_problem_chain_explained
     global gt_activated
