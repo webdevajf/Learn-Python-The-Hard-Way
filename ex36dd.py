@@ -29,7 +29,7 @@ gt_activated = []
 # This line creates function 'start' which
 # explaines the game.
 def start():
-    print("You are in a castle that is under siege from a zombie hoard.")
+    print("\nYou are in a castle that is under siege from a zombie hoard.")
     print("The castle walls and gate are holding the hoard off with no")
     print("difficulty but the castle is running out of food and you and your")
     print("people will soon starve if you stay here. At the back of the castle")
@@ -39,16 +39,15 @@ def start():
     print("people can make your escape. There is just one problem: the")
     print("drawbridge has not been used in decades. It is in disrepair and")
     print("cannot be lowerd. It must be fixed before you can escape.")
-    print("\nYou are in the castle courtyard. You can hear the zombies")
-    print("moaning and screaming outside.\n")
-    print("You can see several buldings within the walls of the castle:")
+    print("\nIf you stand in the courtyard, in front of the castle gates,")
+    print("you can see several buldings within the castle walls:")
     print("In the north west corner of the castle are the stables and the")
     print("north west gaurd tower. In the south west corner of the castle are")
     print("the barricks and the south west gaurd tower. In the north east")
     print("corner of the castle are the blacksmith\'s workshop and the north")
     print("east gaurd tower. In the south east corner of the castle are the")
     print("carpenter\'s workshop and the south east gaurd tower. In the center")
-    print("of the castle is the Keep where the king and his family used to live.\n")
+    print("of the castle is the Keep where the king and his family used to live.")
     courtyard()
 
 # This line creates function 'courtyard' which
@@ -63,7 +62,14 @@ def courtyard():
     global bridge_problem_chain_explained
     global bridge_problem_gears_explained
     global pully
-    print("\nThe variables are:")
+
+    if bridge_problem_chain_explained == 6:
+        pully.insert(0,str("new chain"))
+        bridge_problem_chain_explained += 1
+    else:
+        print()
+
+    print("The variables are:")
     print(f"------ drawbridge is: {drawbridge}. ------")
     print(f"------ inventory is: {inventory}. ------")
     print(f"------ crew is: {crew}. ------")
@@ -142,7 +148,7 @@ def drawbridge_gaurdtower():
         print("gears and build new ones.")
         print("\nWould you like to stay here or go back to the courtyard?")
         where_to = input("> ")
-        if "courtyard" in where_to:
+        if "courtyard" in where_to or "back" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
@@ -153,9 +159,9 @@ def drawbridge_gaurdtower():
         print("with a shiny new one but the wooden gears are still rotten.")
         print("You need the carpenter to remove the rotten gears and build")
         print("new ones.")
-        print("\nWhere would you like to go now?")
+        print("\nWould you like to stay here or go back to the courtyard?")
         where_to = input("> ")
-        if "courtyard" in where_to:
+        if "courtyard" in where_to or "back" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
@@ -165,9 +171,9 @@ def drawbridge_gaurdtower():
         print("disrepair. The carpenter has replaced the rotten gears")
         print("with new ones but the chain is still rusty. You need the blacksmith")
         print("to remove the rusty chain and build a new one.")
-        print("\nWhere would you like to go now?")
+        print("\nWould you like to stay here or go back to the courtyard?")
         where_to = input("> ")
-        if "courtyard" in where_to:
+        if "courtyard" in where_to or "back" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
@@ -177,9 +183,9 @@ def drawbridge_gaurdtower():
         print("The carpenter has replaced the rotten gears with new ones and the")
         print("blacksmith has removed the rusty chain and replaced it with a new")
         print("one.")
-        print("\nWhere would you like to go now?")
+        print("\nWould you like to stay here or go back to the courtyard?")
         where_to = input("> ")
-        if "courtyard" in where_to:
+        if "courtyard" in where_to or "back" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
@@ -190,9 +196,9 @@ def drawbridge_gaurdtower():
         print("removed the rotten wooden gears. You still need him to replace them")
         print("with new ones. You will also need the blacksmith to remove the")
         print("rusty chain and build a new one.")
-        print("\nWhere would you like to go now?")
+        print("\nWould you like to stay here or go back to the courtyard?")
         where_to = input("> ")
-        if "courtyard" in where_to:
+        if "courtyard" in where_to or "back" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
@@ -203,9 +209,9 @@ def drawbridge_gaurdtower():
         print("has removed the rusty chain. You still need her to replace it")
         print("with a new one. You will also need the carpenter to remove the")
         print("rotten gears and replace them with new ones.")
-        print("\nWhere would you like to go now?")
+        print("\nWould you like to stay here or go back to the courtyard?")
         where_to = input("> ")
-        if "courtyard" in where_to:
+        if "courtyard" in where_to or "back" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
@@ -215,9 +221,9 @@ def drawbridge_gaurdtower():
         print("disrepair. The blacksmith has replaced the rusted chain with a")
         print("shiny new one. The carpenter has also removed the rotten gears but")
         print("still needs to replace them with new ones.")
-        print("\nWhere would you like to go now?")
+        print("\nWould you like to stay here or go back to the courtyard?")
         where_to = input("> ")
-        if "courtyard" in where_to:
+        if "courtyard" in where_to or "back" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
@@ -227,9 +233,9 @@ def drawbridge_gaurdtower():
         print("disrepair. The carpenter has replaced the rotten gears with new")
         print("ones. The blacksmith has also removed the rusty chain but still")
         print("needs to replace it with a new one.")
-        print("\nWhere would you like to go now?")
+        print("\nWould you like to stay here or go back to the courtyard?")
         where_to = input("> ")
-        if "courtyard" in where_to:
+        if "courtyard" in where_to or "back" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
@@ -238,9 +244,9 @@ def drawbridge_gaurdtower():
         print("pully apparatus, that raises and lowers the drabridge, is in")
         print("disrepair. The blacksmith and carpenter have removed the rusted")
         print("chain and the rotten wooden gears but have yet to replace them.")
-        print("\nWhere would you like to go now?")
+        print("\nWould you like to stay here or go back to the courtyard?")
         where_to = input("> ")
-        if "courtyard" in where_to:
+        if "courtyard" in where_to or "back" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
@@ -329,7 +335,7 @@ def blacksmith():
             blacksmith()
         else:
             blacksmith()
-    elif bridge_problem_chain_explained == 6:
+    elif bridge_problem_chain_explained >= 6:
         print("\nYou can stay here, talk to the blacksmith, or go back to the")
         print("courtyard. What would you like to do?")
         where_to = input("> ")
@@ -338,10 +344,6 @@ def blacksmith():
         elif "talk" in where_to or "blacksmith" in where_to:
             print("\nShe tells you that she has removed the rusty chain and made")
             print("a new one which she installed in the drawbridge gaurdtower.")
-            print(pully)
-            pully.insert(0,str("new chain"))
-            #pully.append(str("new chain")) # if the above line can't be made to work.
-            print(pully)
             blacksmith()
         else:
             blacksmith()
@@ -461,8 +463,12 @@ def sw_gaurd_tower():
         print("next to a gaurd on duty. He looks very ill with a pallor to his skin,")
         print("glassy eyes and sweat stained clothes. You decide to keep your eyes")
         print("on him. The last thing you need is a plague breaking out in the middle")
-        print("of a seige. Looking over the tower's battlements you can see the sea")
-        print("of shambling zombies futilely trying to break into the castle.")
+        print("of a seige. Looking over the tower's battlements you can see, to")
+        print("the west, the sea of shambling zombies futilely trying to break")
+        print("into the castle and, to the south, you see the chasam over which you")
+        print("plan to make your escape. From time to time a zombie gets pushed over")
+        print("the chasm's edge by the weight of the hoard. They fall listless and")
+        print("uncomprehending to the impact of their second death.")
         print("\nYou can either stay here and look aimlesly at the writhing hoard")
         print("below you, shoot arrows at the zombies to relieve your boredom,")
         print("or you can go back to the castle courtyard. What would you like")
@@ -504,8 +510,12 @@ def sw_gaurd_tower():
     else:
         print("\nYou are at the top of the south west gaurd tower. The bloody body")
         print("of the dead gaurd lies on the tower stones where you left it. Looking")
-        print("over the tower's battlements you can see the sea of shambling zombies")
-        print("futilely trying to break into the castle.")
+        print("over the tower's battlements you can see, to the west, the sea of")
+        print("shambling zombies futilely trying to break into the castle and, to")
+        print("the south, you see the chasam over which you plan to make your")
+        print("escape. From time to time a zombie gets pushed over the chasm's")
+        print("edge by the weight of the hoard. They fall listless and uncomprehending")
+        print("to the impact of their second death.")
         print("\nYou can either stay here and look aimlesly at the writhing hoard")
         print("below you, shoot arrows at the zombies to relieve your boredom,")
         print("or you can go back to the castle courtyard. What would you like")
@@ -552,7 +562,7 @@ def zombie_battle():
     if fight == "shove":
         print("\nYou kick the zombie in the chest to gain space. In one fluid")
         print("motion you draw your sword from the shieth on your belt and,")
-        print("using the momentum from that motion sweep your sword in an upward")
+        print("using the momentum from that motion to sweep your sword in an upward")
         print("arc and slice part of its head off. Unfortonatly, enough of its")
         print("brain is sitll intact for it to keep functioning so you swing")
         print("your blaid back around and slash its head off at the neck. The")
