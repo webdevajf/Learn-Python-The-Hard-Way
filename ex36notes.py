@@ -14,41 +14,53 @@
 ## rusted. You need to construct a new chain and
 ## new gears before you can make your escape.
 
+## Note: So I didn't do the best job of sticking to the format that Z. Shaw
+## recommends for work flow on the first half of this project. Having gone
+## through about half of the thing now I really see the importance of that now.
+## The second half of the projcect really involves a separate system that
+## opperates within the game (The carpenter creating gears), independent of the
+## first one (the blacsmith creating a chain). The workflow is important because
+## on bigger projects it would be impossible to keep track of all the moving
+## parts that the programmer has to manage and develope to say nothing of keeping
+## a team on the same page. I'm going to try to do a better job of this for
+## this half of the project.
+
+## THE Z. SHAW CODING PROCESS:
+#1 Write a to do list.
+#2 Pick the easiest thing from your list.
+#3 Describe the thing in your source code in English comments.
+#4 Write code under the comments.
+#5 run the code to see if it works.
+#5 stay in the cycle of writing code, running it to test it, and fixing it untill
+## it works.
+#6 cross the task off your list, go to the next task, repeat.
+
 
 ## TO DO LIST:
 
-#1 Create a function 'Start' which introduces
-# the player to the game and explaines it to
-# them.
+#A) find a way to use a for-loop in this game.
 
-#2 Use a function to create the courtyard where
-# all of the games other locations can be seen
-# and accessed.
+#1 Create the 'carpenter' function. It will work the same way as the 'blacksmith'
+## function in that "talking" to the carpenter will become accessable after
+## the 'drawbridge_gaurdtower' is accessed for the first time and the nature of
+## the gears and the carpenter's relationship to them is made clear. The carpenter
+## will then explain that he needs wood to make the new gears and the "rotten
+## gears" string will be removed from var 'pully'. It will be up to the player
+## to explore the keep, barricks, and stables inorder to accertain where the
+## wood is and how to get it to the blacksmith. Once the gears are made the player
+## will need the strings 'men', 'horses', and 'wagon' to be in var 'crew' inorder
+## for the blacksmith to get the new gears to the drawbridge_gaurdtower.
 
-#3 Create all of the games other locations:
-    #1) The drawbridge gaurdtower
-    #2) The NW gaurdtower
-    #3) The stables
-    #4) The SW gaurdtower
-    #5) The barricks
-    #6) The SE gaurdtower
-    #7) The carpenter's workshop
-    #8) The NE gaurdtower
-    #9) The blacksmith's workshop
+#2 keep
 
-#4 Var's bridge_problem_chain_explained & bridge_problem_gears_explained:
-#   -var's = 0 user has not been made aware of problem.
-#   -var's = 1 player made aware of problems, blacksmith and carpenter
-#   can be talked to about issues.
+#3 stables
+
+#4 barricks
 
 
 ## PROBLEMS TO SOLVE:
 
-#1 how to get the gaurd towers to NOT give you the option of taking the
-# soldiers metal weapons before you've talked with the blacksmith then, to
-# switch to giving you the option of taking those weapons once you have talked
-# to the blacsmith, and then to once again switch to not give you that option
-# once you have mined that particular tower of it's metal resources.
+#1
 
 
 ## QUESTIONS THAT NEED ANSWERING:
