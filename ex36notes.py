@@ -51,11 +51,26 @@
 ## will need the strings 'men', 'horses', and 'wagon' to be in var 'crew' inorder
 ## for the blacksmith to get the new gears to the drawbridge_gaurdtower.
 
-#2 keep
+#2 Create the 'keep' function. This will be where the wood for the gears can be
+## found in the form of furnature in the great hall. It will become clear that
+## is what the furnature is for after talking to the carpenter. However, the
+## player will need 'men' to be in var 'crew' inorder to get the furnature out
+## of the keep and to the carpenter. The great hall of the keep will have a
+## passage that leads down to function 'mausoleum' where the story of the king
+## and his family falling prey to disease, becoming zombies and eating eachother
+## will be told.
 
-#3 stables
+#3 Create the 'barricks' function. This is where the player can get the men
+## needed to move the furnature from the keep to the carpenter's workshop and
+## to harness the horses to the wagon at the stables.
 
-#4 barricks
+#4 Create the 'stables' function. This is where the player can get horses and a
+## wagon to move the carpenters newly made gears to the drawbridge gaurdtower.
+## They will become accessable after the carpenter has made the gears (after the
+## furnature has been brought to the carpenter) and after the player has talked
+## to the carpenter.
+
+
 
 
 ## PROBLEMS TO SOLVE:

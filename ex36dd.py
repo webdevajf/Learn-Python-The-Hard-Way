@@ -13,7 +13,7 @@
 ## it works.
 #6 cross the task off your list, go to the next task, repeat.
 
-# TO DD ITEM:
+# TO DO ITEM: function 'carpenter'
 
 from sys import exit
 
@@ -261,6 +261,7 @@ def drawbridge_gaurdtower():
 
 def blacksmith():
     global bridge_problem_chain_explained
+
     print("\nYou are in the blacksmith's workshop. You look around and see her")
     print("working diligengly at her forge.")
 
@@ -365,13 +366,13 @@ def blacksmith():
             blacksmith()
 
 def nw_gaurd_tower():
+    global bridge_problem_chain_explained
+    global gt_activated
+
     print("\nYou are at the top of the north west gaurd tower. You find yourself")
     print("next to a gaurd on duty. Looking over the tower's battlements you")
     print("can see the sea of shambling zombies futilely trying to break into")
     print("the castle.")
-
-    global bridge_problem_chain_explained
-    global gt_activated
 
     if bridge_problem_chain_explained <= 1:
         print("\nYou can either stay here and look aimlesly at the writhing hoard")
@@ -473,7 +474,6 @@ def nw_gaurd_tower():
             nw_gaurd_tower()
 
 def sw_gaurd_tower():
-
     global bridge_problem_chain_explained
     global gt_activated
 
@@ -568,7 +568,6 @@ def sw_gaurd_tower():
 face_smashes = 0
 
 def zombie_battle():
-
     global bridge_problem_chain_explained
     global gt_activated
     global face_smashes
@@ -692,13 +691,13 @@ def zombie_battle():
         exit(0)
 
 def ne_gaurd_tower():
+    global bridge_problem_chain_explained
+    global gt_activated
+
     print("\nYou are at the top of the north east gaurd tower. You find yourself")
     print("next to a gaurd on duty. Looking over the tower's battlements you")
     print("can see the sea of shambling zombies futilely trying to break into")
     print("the castle.")
-
-    global bridge_problem_chain_explained
-    global gt_activated
 
     if bridge_problem_chain_explained <= 1:
         print("\nYou can either stay here and look aimlesly at the writhing hoard")
@@ -799,6 +798,9 @@ def ne_gaurd_tower():
             ne_gaurd_tower()
 
 def se_gaurd_tower():
+    global bridge_problem_chain_explained
+    global gt_activated
+
     print("\nYou are at the top of the south east gaurd tower. You find yourself")
     print("next to a gaurd on duty. Looking over the tower's battlements to the")
     print("east you can see the sea of shambling zombies futilely trying to")
@@ -806,9 +808,6 @@ def se_gaurd_tower():
     print("plan to make your escape. From time to time a zombie gets pushed over")
     print("the chasm's edge by the weight of the hoard. They fall listless and")
     print("uncomprehending to the impact of their second death.")
-
-    global bridge_problem_chain_explained
-    global gt_activated
 
     if bridge_problem_chain_explained <= 1:
         print("\nYou can either stay here and look aimlesly at the writhing hoard")
@@ -908,16 +907,56 @@ def se_gaurd_tower():
         else:
             se_gaurd_tower()
 
+#1 Create the 'carpenter' function. It will work the same way as the 'blacksmith'
+## function in that "talking" to the carpenter will become accessable after
+## the 'drawbridge_gaurdtower' is accessed for the first time and the nature of
+## the gears and the carpenter's relationship to them is made clear. The carpenter
+## will then explain that he needs wood to make the new gears and the "rotten
+## gears" string will be removed from var 'pully'. It will be up to the player
+## to explore the keep, barricks, and stables inorder to accertain where the
+## wood is and how to get it to the blacksmith. Once the gears are made the player
+## will need the strings 'men', 'horses', and 'wagon' to be in var 'crew' inorder
+## for the blacksmith to get the new gears to the drawbridge_gaurdtower.
 def carpenter():
-    print("bob")
+    print("You are in the carpenter's workshop. You see him working in concentration")
+    print("with his tools.")
 
+    if bridge_problem_gears_explained == 0:
+        print("\nYou can stay here or go back to the courtyard. What would you")
+        print("like to do?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to:
+            courtyard()
+        else:
+            carpenter()
+
+    elif bridge_problem_gears_explained == 1:
+
+#2 Create the 'keep' function. This will be where the wood for the gears can be
+## found in the form of furnature in the great hall. It will become clear that
+## is what the furnature is for after talking to the carpenter. However, the
+## player will need 'men' to be in var 'crew' inorder to get the furnature out
+## of the keep and to the carpenter. The great hall of the keep will have a
+## passage that leads down to function 'mausoleum' where the story of the king
+## and his family falling prey to disease, becoming zombies and eating eachother
+## will be told.
 def keep():
     print("bob")
 
-def stables():
-    print("bob")
+#3 Create the 'barricks' function. This is where the player can get the men
+## needed to move the furnature from the keep to the carpenter's workshop and
+## to harness the horses to the wagon at the stables.
 
 def barricks():
+    print("bob")
+
+#4 Create the 'stables' function. This is where the player can get horses and a
+## wagon to move the carpenters newly made gears to the drawbridge gaurdtower.
+## They will become accessable after the carpenter has made the gears (after the
+## furnature has been brought to the carpenter) and after the player has talked
+## to the carpenter.
+def stables():
     print("bob")
 
 start()
