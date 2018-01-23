@@ -40,7 +40,8 @@
 
 #A) find a way to use a for-loop in this game.
 
-#1 Create the 'carpenter' function. It will work the same way as the 'blacksmith'
+#1 ---DONE---
+## Create the 'carpenter' function. It will work the same way as the 'blacksmith'
 ## function in that "talking" to the carpenter will become accessable after
 ## the 'drawbridge_gaurdtower' is accessed for the first time and the nature of
 ## the gears and the carpenter's relationship to them is made clear. The carpenter
@@ -69,6 +70,12 @@
 ## They will become accessable after the carpenter has made the gears (after the
 ## furnature has been brought to the carpenter) and after the player has talked
 ## to the carpenter.
+
+#5 You will need to build a system of functions, once the drawbridge is repaired,
+## to move the story over the bridge and out of the castle, and then end the game.
+## Somewhere, in here might be a good place to use a for loop, possibly while
+## listing the repaires that have been made and all the people and supples that
+## are ready to go.
 
 
 
