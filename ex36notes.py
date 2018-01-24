@@ -52,7 +52,8 @@
 ## will need the strings 'men', 'horses', and 'wagon' to be in var 'crew' inorder
 ## for the blacksmith to get the new gears to the drawbridge_gaurdtower.
 
-#2 Create the 'keep' function. This will be where the wood for the gears can be
+#2 ---DONE--- 
+## Create the 'keep' function. This will be where the wood for the gears can be
 ## found in the form of furnature in the great hall. It will become clear that
 ## is what the furnature is for after talking to the carpenter. However, the
 ## player will need 'men' to be in var 'crew' inorder to get the furnature out
