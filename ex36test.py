@@ -72,7 +72,7 @@ def courtyard():
     print(f"------ crew is: {crew}. ------")
     print(f"------ bridge_problem_chain_explained is: {bridge_problem_chain_explained} ---------")
     print(f"------ bridge_problem_gears_explained is: {bridge_problem_gears_explained} ---------")
-    print(f"------ bridge_problem_gears_explained is: {wood_problem_explained} ---------")
+    print(f"------ wood_problem_explained is: {wood_problem_explained} ---------")
     print(f"------ pully is: {pully}. ------")
     print(f"------ gt_activated is: {gt_activated}.------")
     print("\nYou are in the castle courtyard. You can hear the zombies")
