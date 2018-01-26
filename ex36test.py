@@ -48,11 +48,6 @@ def start():
     print("of the castle is the Keep where the king and his family used to live.")
     courtyard()
 
-# This line creates function 'courtyard' which
-# brings the player to the games' start point
-# and central hub from which you can access all
-# of the other locations in the game. It describes
-# all of these locations.
 def courtyard():
     global drawbridge
     global inventory
@@ -269,6 +264,7 @@ def drawbridge_gaurdtower():
 
 def blacksmith():
     global bridge_problem_chain_explained
+    
     print("\nYou are in the blacksmith's workshop. You look around and see her")
     print("working diligengly at her forge.")
 
@@ -924,10 +920,11 @@ def se_gaurd_tower():
 ## gears" string will be removed from var 'pully'. It will be up to the player
 ## to explore the keep, barricks, and stables inorder to accertain where the
 ## wood is and how to get it to the blacksmith. Once the gears are made the player
-## will need the strings 'men', 'horses', and 'wagon' to be in var 'crew' inorder
+## will need the strings 'men', 'horses', and 'wagon' to be in var 'crew' in order
 ## for the blacksmith to get the new gears to the drawbridge_gaurdtower.
 def carpenter():
     global bridge_problem_gears_explained
+    global wood_problem_explained
 
     print("\nYou are in the carpenter's workshop. You see him working in concentration")
     print("with his tools.")
@@ -955,6 +952,7 @@ def carpenter():
                 print("extensive supply of wood to construct new ones. You")
                 print("head back out into the courtyard.")
                 bridge_problem_gears_explained = 2
+                wood_problem_explained = 1
                 print(f"pully is: {pully}")
                 pully.remove(str("rotten gears"))
                 print(f"now pully is: {pully}")
@@ -1000,7 +998,7 @@ def carpenter():
             else:
                 carpenter()
 
-    elif bridge_problem_gears_explained == 4:
+    elif bridge_problem_gears_explained == 4 and "horses" in crew and "wagon" in crew:
             print("\nYou have brought the men, horses and wagon to the carpenter's")
             print("workshop so they can move the gears to the drawbridge gaurdtower.")
             print("You can stay here or talk to the carpenter. What would you like")
@@ -1029,31 +1027,168 @@ def carpenter():
         else:
             carpenter()
 
-
 #2 Create the 'keep' function. This will be where the wood for the gears can be
 ## found in the form of furnature in the great hall. It will become clear that
 ## is what the furnature is for after talking to the carpenter. However, the
 ## player will need 'men' to be in var 'crew' inorder to get the furnature out
 ## of the keep and to the carpenter. The great hall of the keep will have a
-## passage that leads down to function 'mausoleum' where the story of the king
+## passage that leads down to function 'cript' where the story of the king
 ## and his family falling prey to disease, becoming zombies and eating eachother
 ## will be told.
 def keep():
-    print("bob")
+    global bridge_problem_gears_explained
+    global wood_problem_explained
+    global crew
+    print("\nYou enter the great hall of the Keep. There's a fire burning in the")
+    print("fireplace and the room's warmth is comforting after the cold of the")
+    print("dreary day outside. There are tapestries on the wall that remind you")
+    print("of happier days.")
+
+    if wood_problem_explained == 0:
+        print("You can see the beautiful wooden banquet tables that you used to")
+        print("sit upon for the king's feasts. You miss those feasts.")
+        print("\nYou can stay here, go down into the cript, or go back to the courtyard.")
+        print("Where would you like to go?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to:
+            courtyard()
+        elif "cript" in where_to:
+            cript()
+        else:
+            keep()
+
+    elif wood_problem_explained == 1 and "men" in crew:
+        print("The soldiers enter the great hall behind you. They open wide, the")
+        print("doors to the hall, and set about removing the wooden feasting tables.")
+        print("You quietly shed some tears thinking of all the good times you've")
+        print("had while sitting at those tables. Then you take a deep breath and")
+        print("resign yourself to the thought that they will soon be no more than")
+        print("gears in a pully in a castle that you will be leaving behind.")
+        print("\nYou dry your eyes and head back out into the courtyard.")
+        bridge_problem_gears_explained = 3
+        wood_problem_explained = 2
+        courtyard()
+
+    elif wood_problem_explained == 1:
+        print("You can see the beautiful wooden banquet tables that you used to")
+        print("sit upon for the king's feasts. These would be an adequate supply.")
+        print("of wood for the carpenter to make the gears with. Unfortunatley,")
+        print("these tables are too big for you to lift by yourself. You will")
+        print("need some help to get them to the carpenter.")
+        print("\nYou can stay here, go down into the cript, or go back to the courtyard.")
+        print("Where would you like to go?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to:
+            courtyard()
+        elif "cript" in where_to:
+            cript()
+        else:
+            keep()
+
+    elif wood_problem_explained == 2:
+        print("You can see the empty space where the banquet tables used to be.")
+        print("You feel a twinge of sadness.")
+        print("\nYou can stay here, go down into the cript, or go back to the courtyard.")
+        print("Where would you like to go?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to:
+            courtyard()
+        elif "cript" in where_to:
+            cript()
+        else:
+            keep()
+
+def cript():
+    print("\nYou enter the cript. It is dark and oppressive, lit by only a single torch.")
+    print("Here you find the graves of the king, his family, and their ancestors.")
+    print("You sigh with sorrow as you think upon the tragic death of your late")
+    print("ruller and his family. It was you who found them. Late one night when")
+    print("you rushed up to thier chambers to deliver a message that had been brought")
+    print("by raven. You stood outside the door of thier family common room. The king")
+    print("had been ill of late, so it was nothing surprising when you heard moans comming")
+    print("from within the room, but then you heard a crunch and a scream! You rushed")
+    print("headlong into the room to a sceen of utter horror! The royal prince and")
+    print("princess lay upon the floor in pools of their own blood. The princess")
+    print("was dead and the the prince was gurgling the last of his raggad, bloody")
+    print("breaths. On the other side of the room the king, now a zombie, lay over")
+    print("his wife's body chewing at her ruined throat. You cut off his head and")
+    print("quickly decapitated the other boddies to stop an outbreak. To this day")
+    print("none know how the king had gotten bitten nor why he didn't tell his")
+    print("trusted advisors. Three days later the Zombie hoard appeard on the")
+    print("horizon and it fell to you to oversee the castle's defenses.")
+
+    print("You can stay here, or go back up to the great hall of the Keep.")
+    print("Where would you like to go?")
+    where_to = input("> ")
+
+    if "eep" in where_to or "up" in where_to or "back" in where_to or "hall" in where_to:
+        keep()
+    else:
+        cript()
 
 #3 Create the 'barricks' function. This is where the player can get the men
 ## needed to move the furnature from the keep to the carpenter's workshop and
 ## to harness the horses to the wagon at the stables.
-
 def barricks():
-    print("bob")
+    global wood_problem_explained
+    global crew
+
+    if wood_problem_explained == 1 and "men" in crew:
+        print("The barricks is so quiet when it's empty. It's good that the soldiers")
+        print("are occupied with work and not stuck in here ruminating on the doom")
+        print("outside the castle walls. You head back into the courtyard.")
+        courtyard()
+    elif wood_problem_explained == 1:
+        print("You call the soldiers to attention. They form up and you explain")
+        print("to them that the carpenter needs the wood from the banquet tables")
+        print("in the keep. They fall in line and you take them to the Keep.")
+        crew.append("men")
+        keep()
+    elif wood_problem_explained == 2:
+        print("The barricks is so quiet when it's empty. It's good that the soldiers")
+        print("are occupied with work and not stuck in here ruminating on the doom")
+        print("outside the castle walls. You head back into the courtyard")
+        courtyard()
+    else:
+        print("You walk into the barricks. The off duty soldiers are standing around")
+        print("chatting, sitting and playing cards, or laying in their bunks.")
+        print("It's good to see the men are healthy despite the troubles that")
+        print("surround them. You feel proud of them as you head back out to")
+        print("the courtyard.")
+        courtyard()
 
 #4 Create the 'stables' function. This is where the player can get horses and a
 ## wagon to move the carpenters newly made gears to the drawbridge gaurdtower.
 ## They will become accessable after the carpenter has made the gears (after the
 ## furnature has been brought to the carpenter) and after the player has talked
-## to the carpenter.
+## to the carpenter about the need for horses and a wagon.
 def stables():
-    print("bob")
+    global bridge_problem_gears_explained
+
+    if bridge_problem_gears_explained < 3:
+        print("You walk into the stables. Outside you saw an open wagon that a")
+        print("pesant used to bring grain into the castle before the hoard arrived.")
+        print("It's a good thing that grain arrived in time or else the horses would")
+        print("have starved weeks ago. Inside the stables you see the creatures")
+        print("lounging in their stalls, peacfully unaware of the horrors outside.")
+        print("You head back out to the courtyard.")
+        courtyard()
+    elif bridge_problem_gears_explained == 3:
+        print("You enter the stables with the soldiers and they set about pulling")
+        print("the horses out of their pens. They bring the horses out of the")
+        print("stables and harness a team of them to the wagon. You are in the")
+        print("courtyard.")
+        crew.append("horses")
+        crew.append("wagon")
+        bridge_problem_gears_explained = 4
+        courtyard()
+    else:
+        print("You walk into the empty stables. The horses are out being used")
+        print("for work. There's nothing in here. You head back out to the")
+        print("courtyard.")
+        courtyard()
 
 start()
