@@ -18,10 +18,10 @@
 
 drawbridge = False
 inventory = []
-crew = ["men"]
+crew = []
 bridge_problem_chain_explained = 0
 bridge_problem_gears_explained = 0
-wood_problem_explained = 1
+wood_problem_explained = 0
 pully = ["rusty chain", "rotten gears"]
 gt_activated = []
 
@@ -97,6 +97,147 @@ def courtyard():
         barricks()
     else:
         courtyard()
+
+def drawbridge_gaurdtower():
+    global pully
+
+    if "rusty chain" in pully and "rotten gears" in pully:
+        global bridge_problem_chain_explained
+        global bridge_problem_gears_explained
+        print(f"------ pully is {pully} ---------")
+        print(f"------ bridge_problem_chain_explained is {bridge_problem_chain_explained} ---------")
+        print(f"------ bridge_problem_gears_explained is {bridge_problem_gears_explained} ---------")
+        bridge_problem_chain_explained = 1
+        bridge_problem_gears_explained = 1
+        print(f"------ bridge_problem_chain_explained is {bridge_problem_chain_explained} ---------")
+        print(f"------ bridge_problem_gears_explained is {bridge_problem_gears_explained} ---------")
+        print("\nYou are in the gaurdtower next to the drawbridge. You see that the")
+        print("pully apparatus, that raises and lowers the drabridge, is in")
+        print("disrepair. The chain is rusted and the wooden gears are rotten.")
+        print("You will need the blacksmith to remove the rusty chain and build")
+        print("a new one. Also, you will need the carpenter to remove the rotten")
+        print("gears and build new ones.")
+        print("\nWould you like to stay here or go back to the courtyard?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to or "back" in where_to:
+            courtyard()
+        else:
+            drawbridge_gaurdtower()
+
+    elif "new chain" in pully and "rotten gears" in pully:
+        print("\nYou are in the gaurdtower next to the drawbridge. You see that the")
+        print("pully apparatus, that raises and lowers the drabridge, is in")
+        print("disrepair. The blacksmith has replaced the rusted chain")
+        print("with a shiny new one but the wooden gears are still rotten.")
+        print("You need the carpenter to remove the rotten gears and build")
+        print("new ones.")
+        print("\nWould you like to stay here or go back to the courtyard?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to or "back" in where_to:
+            courtyard()
+        else:
+            drawbridge_gaurdtower()
+
+    elif "rusty chain" in pully and "new gears" in pully:
+        print("\nYou are in the gaurdtower next to the drawbridge. You see that the")
+        print("pully apparatus, that raises and lowers the drabridge, is in")
+        print("disrepair. The carpenter has replaced the rotten gears")
+        print("with new ones but the chain is still rusty. You need the blacksmith")
+        print("to remove the rusty chain and build a new one.")
+        print("\nWould you like to stay here or go back to the courtyard?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to or "back" in where_to:
+            courtyard()
+        else:
+            drawbridge_gaurdtower()
+
+    elif "new chain" in pully and "new gears" in pully:
+        print("\nYou are in the gaurdtower next to the drawbridge. You see that the")
+        print("pully apparatus, that raises and lowers the drabridge, is repaired!")
+        print("The carpenter has replaced the rotten gears with new ones and the")
+        print("blacksmith has removed the rusty chain and replaced it with a new")
+        print("one.")
+        print("\nWould you like to stay here or go back to the courtyard?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to or "back" in where_to:
+            courtyard()
+        else:
+            drawbridge_gaurdtower()
+
+    elif "rusty chain" in pully:
+        print("\nYou are in the gaurdtower next to the drawbridge. You see that the")
+        print("pully apparatus, that raises and lowers the drabridge, is in")
+        print("disrepair. The rusty chain is still in place but the carpenter has")
+        print("removed the rotten wooden gears. You still need him to replace them")
+        print("with new ones. You will also need the blacksmith to remove the")
+        print("rusty chain and build a new one.")
+        print("\nWould you like to stay here or go back to the courtyard?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to or "back" in where_to:
+            courtyard()
+        else:
+            drawbridge_gaurdtower()
+
+    elif "rotten gears" in pully:
+        print("\nYou are in the gaurdtower next to the drawbridge. You see that the")
+        print("pully apparatus, that raises and lowers the drabridge, is in")
+        print("disrepair. The rotten gears are still in place but the blacksmith")
+        print("has removed the rusty chain. You still need her to replace it")
+        print("with a new one. You will also need the carpenter to remove the")
+        print("rotten gears and replace them with new ones.")
+        print("\nWould you like to stay here or go back to the courtyard?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to or "back" in where_to:
+            courtyard()
+        else:
+            drawbridge_gaurdtower()
+
+    elif "new chain" in pully:
+        print("\nYou are in the gaurdtower next to the drawbridge. You see that the")
+        print("pully apparatus, that raises and lowers the drabridge, is in")
+        print("disrepair. The blacksmith has replaced the rusted chain with a")
+        print("shiny new one. The carpenter has also removed the rotten gears but")
+        print("still needs to replace them with new ones.")
+        print("\nWould you like to stay here or go back to the courtyard?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to or "back" in where_to:
+            courtyard()
+        else:
+            drawbridge_gaurdtower()
+
+    elif "new gears" in pully:
+        print("\nYou are in the gaurdtower next to the drawbridge. You see that the")
+        print("pully apparatus, that raises and lowers the drabridge, is in")
+        print("disrepair. The carpenter has replaced the rotten gears with new")
+        print("ones. The blacksmith has also removed the rusty chain but still")
+        print("needs to replace it with a new one.")
+        print("\nWould you like to stay here or go back to the courtyard?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to or "back" in where_to:
+            courtyard()
+        else:
+            drawbridge_gaurdtower()
+
+    else:
+        print("\nYou are in the gaurdtower next to the drawbridge. You see that the")
+        print("pully apparatus, that raises and lowers the drabridge, is in")
+        print("disrepair. The blacksmith and carpenter have removed the rusted")
+        print("chain and the rotten wooden gears but have yet to replace them.")
+        print("\nWould you like to stay here or go back to the courtyard?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to or "back" in where_to:
+            courtyard()
+        else:
+            drawbridge_gaurdtower()
 
 # --------------------------------------------------------------------------------
 #1 Create the 'carpenter' function. It will work the same way as the 'blacksmith'
@@ -246,8 +387,8 @@ def keep():
             keep()
 
     elif wood_problem_explained == 1 and "men" in crew:
-        print("The men enter the great hall behind you. They open wide, the doors")
-        print("to the hall, and set about removing the wooden feasting tables.")
+        print("The soldiers enter the great hall behind you. They open wide, the")
+        print("doors to the hall, and set about removing the wooden feasting tables.")
         print("You quietly shed some tears thinking of all the good times you've")
         print("had while sitting at those tables. Then you take a deep breath and")
         print("resign yourself to the thought that they will soon be no more than")
@@ -315,5 +456,51 @@ def cript():
         keep()
     else:
         cript()
+
+#3 Create the 'barricks' function. This is where the player can get the men
+## needed to move the furnature from the keep to the carpenter's workshop and
+## to harness the horses to the wagon at the stables.
+def barricks():
+    global wood_problem_explained
+    global crew
+
+    if wood_problem_explained == 1 and "men" in crew:
+        print("The barricks is so quiet when it's empty. It's good that the soldiers")
+        print("are occupied with work and not stuck in here ruminating on the doom")
+        print("outside the castle walls. You head back into the courtyard.")
+        courtyard()
+    elif wood_problem_explained == 1:
+        print("You call the soldiers to attention. They form up and you explain")
+        print("to them that the carpenter needs the wood from the banquet tables")
+        print("in the keep. They fall in line and you take them to the Keep.")
+        crew.append("men")
+        keep()
+    elif wood_problem_explained == 2:
+        print("The barricks is so quiet when it's empty. It's good that the soldiers")
+        print("are occupied with work and not stuck in here ruminating on the doom")
+        print("outside the castle walls. You head back into the courtyard")
+        courtyard()
+    else:
+        print("You walk into the barricks. The off duty soldiers are standing around")
+        print("chatting, sitting and playing cards, or laying in their bunks.")
+        print("It's good to see the men are healthy despite the troubles that")
+        print("surround them. You feel proud of them as you head back out to")
+        print("the courtyard.")
+        courtyard()
+
+#4 Create the 'stables' function. This is where the player can get horses and a
+## wagon to move the carpenters newly made gears to the drawbridge gaurdtower.
+## They will become accessable after the carpenter has made the gears (after the
+## furnature has been brought to the carpenter) and after the player has talked
+## to the carpenter.
+def stables():
+    global bridge_problem_gears_explained
+
+    if bridge_problem_gears_explained < 3:
+        print("")
+    elif bridge_problem_gears_explained = 3:
+        print("")
+    else:
+        print("")
 
 courtyard()
