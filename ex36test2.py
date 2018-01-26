@@ -326,7 +326,7 @@ def carpenter():
             else:
                 carpenter()
 
-    elif bridge_problem_gears_explained == 4:
+    elif bridge_problem_gears_explained == 4 and "horses" in crew and "wagon" in crew:
             print("\nYou have brought the men, horses and wagon to the carpenter's")
             print("workshop so they can move the gears to the drawbridge gaurdtower.")
             print("You can stay here or talk to the carpenter. What would you like")
@@ -492,15 +492,31 @@ def barricks():
 ## wagon to move the carpenters newly made gears to the drawbridge gaurdtower.
 ## They will become accessable after the carpenter has made the gears (after the
 ## furnature has been brought to the carpenter) and after the player has talked
-## to the carpenter.
+## to the carpenter about the need for horses and a wagon.
 def stables():
     global bridge_problem_gears_explained
 
     if bridge_problem_gears_explained < 3:
-        print("")
-    elif bridge_problem_gears_explained = 3:
-        print("")
+        print("You walk into the stables. Outside you saw an open wagon that a")
+        print("pesant used to bring grain into the castle before the hoard arrived.")
+        print("It's a good thing that grain arrived in time or else the horses would")
+        print("have starved weeks ago. Inside the stables you see the creatures")
+        print("lounging in their stalls, peacfully unaware of the horrors outside.")
+        print("You head back out to the courtyard.")
+        courtyard()
+    elif bridge_problem_gears_explained == 3:
+        print("You enter the stables with the soldiers and they set about pulling")
+        print("the horses out of their pens. They bring the horses out of the")
+        print("stables and harness a team of them to the wagon. You are in the")
+        print("courtyard.")
+        crew.append("horses")
+        crew.append("wagon")
+        bridge_problem_gears_explained = 4
+        courtyard()
     else:
-        print("")
+        print("You walk into the empty stables. The horses are out being used")
+        print("for work. There's nothing in here. You head back out to the")
+        print("courtyard.")
+        courtyard()
 
 courtyard()
