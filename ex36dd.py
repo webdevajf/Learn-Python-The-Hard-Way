@@ -83,46 +83,56 @@ def courtyard():
     print("the south west gaurd tower,")
     print("and the Keep.")
 
-    if drawbridge is False:
+    if drawbridge is True:
+        print("At the castles back wall you can see the drabridge and its")
+        print("gaurdtower.")
+        print("It is lowered!")
+        print("You can now cross the chasam and escape the zombies!\n")
+        print("What would you like to do?")
+        what_to_do = input("\n> ")
+
+        if "cross" in what_to_do or "chasam" in what_to_do or "escape" in what_to_do:
+            print("\nYou and your people have crossed the drawbridge and escaped")
+            print("The besiged castle! GOOD JOB!!!\n")
+            exit()
+        else:
+            courtyard()
+
+    else:
         print("At the castles' back wall you can see the drawbridge and its")
         print("gaurdtower.")
         print("It is currently raised.")
         print("You are trapped in the castle.\n")
-    else:
-        print("At the castles back wall you can see the drabridge and its")
-        print("gaurdtower.")
-        print("It is lowered!")
-        print("Cross the chasam and escape the zombies!\n")
+        print("You can stay here or enter one of those buildings.")
+        print("Where would you like to go?")
+        where_to = input("> ")
 
-    print("You can stay here or enter one of those buildings.")
-    print("Where would you like to go?")
-    where_to = input("> ")
-
-    if "drawbridge" in where_to:
-        drawbridge_gaurdtower()
-    elif "nw" in where_to or "north west" in where_to:
-        nw_gaurd_tower()
-    elif "sw" in where_to or "south west" in where_to:
-        sw_gaurd_tower()
-    elif "ne" in where_to or "north east" in where_to:
-        ne_gaurd_tower()
-    elif "blacksmith" in where_to:
-        blacksmith()
-    elif "se" in where_to or "south east" in where_to:
-        se_gaurd_tower()
-    elif "carpenter" in where_to:
-        carpenter()
-    elif "keep" in where_to:
-        keep()
-    elif "stables" in where_to:
-        stables()
-    elif "barricks" in where_to:
-        barricks()
-    else:
-        courtyard()
+        if "drawbridge" in where_to:
+            drawbridge_gaurdtower()
+        elif "nw" in where_to or "north west" in where_to:
+            nw_gaurd_tower()
+        elif "sw" in where_to or "south west" in where_to:
+            sw_gaurd_tower()
+        elif "ne" in where_to or "north east" in where_to:
+            ne_gaurd_tower()
+        elif "blacksmith" in where_to:
+            blacksmith()
+        elif "se" in where_to or "south east" in where_to:
+            se_gaurd_tower()
+        elif "carpenter" in where_to:
+            carpenter()
+        elif "keep" in where_to:
+            keep()
+        elif "stables" in where_to:
+            stables()
+        elif "barricks" in where_to:
+            barricks()
+        else:
+            courtyard()
 
 def drawbridge_gaurdtower():
     global pully
+    global drawbridge
 
     if "rusty chain" in pully and "rotten gears" in pully:
         global bridge_problem_chain_explained
@@ -177,17 +187,33 @@ def drawbridge_gaurdtower():
         else:
             drawbridge_gaurdtower()
 
+    elif "new chain" in pully and "new gears" in pully and drawbridge == True:
+        print("\nYou are in the gaurdtower next to the drawbridge. You see that the")
+        print("pully apparatus, that raises and lowers the drabridge, is repaired")
+        print("and you have lowered the drawbridge! You and your people are ready")
+        print("to make your escape!")
+        print("\nWould you like to stay here or go back to the courtyard?")
+        where_to = input("> ")
+
+        if "courtyard" in where_to or "back" in where_to:
+            courtyard()
+        else:
+            drawbridge_gaurdtower()
+
     elif "new chain" in pully and "new gears" in pully:
         print("\nYou are in the gaurdtower next to the drawbridge. You see that the")
         print("pully apparatus, that raises and lowers the drabridge, is repaired!")
         print("The carpenter has replaced the rotten gears with new ones and the")
         print("blacksmith has removed the rusty chain and replaced it with a new")
         print("one.")
-        print("\nWould you like to stay here or go back to the courtyard?")
+        print("\nWould you like to stay here, lower the drawbridge, or go back to the courtyard?")
         where_to = input("> ")
 
         if "courtyard" in where_to or "back" in where_to:
             courtyard()
+        elif "lower" in where_to or "drawbridge" in where_to:
+            drawbridge = True
+            drawbridge_gaurdtower()
         else:
             drawbridge_gaurdtower()
 
