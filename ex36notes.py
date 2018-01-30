@@ -52,7 +52,7 @@
 ## will need the strings 'men', 'horses', and 'wagon' to be in var 'crew' inorder
 ## for the blacksmith to get the new gears to the drawbridge_gaurdtower.
 
-#2 ---DONE--- 
+#2 ---DONE---
 ## Create the 'keep' function. This will be where the wood for the gears can be
 ## found in the form of furnature in the great hall. It will become clear that
 ## is what the furnature is for after talking to the carpenter. However, the
@@ -62,17 +62,20 @@
 ## and his family falling prey to disease, becoming zombies and eating eachother
 ## will be told.
 
-#3 Create the 'barricks' function. This is where the player can get the men
+#3 ---DONE---
+## Create the 'barricks' function. This is where the player can get the men
 ## needed to move the furnature from the keep to the carpenter's workshop and
 ## to harness the horses to the wagon at the stables.
 
-#4 Create the 'stables' function. This is where the player can get horses and a
+#4  ---DONE---
+## Create the 'stables' function. This is where the player can get horses and a
 ## wagon to move the carpenters newly made gears to the drawbridge gaurdtower.
 ## They will become accessable after the carpenter has made the gears (after the
 ## furnature has been brought to the carpenter) and after the player has talked
 ## to the carpenter.
 
-#5 You will need to build a system of functions, once the drawbridge is repaired,
+#5  ---DONE--- 
+##You will need to build a system of functions, once the drawbridge is repaired,
 ## to move the story over the bridge and out of the castle, and then end the game.
 ## Somewhere, in here might be a good place to use a for loop, possibly while
 ## listing the repaires that have been made and all the people and supples that
