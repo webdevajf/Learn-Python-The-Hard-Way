@@ -15,7 +15,7 @@
 
 from sys import exit
 
-drawbridge = False
+drawbridge = True
 inventory = []
 crew = []
 bridge_problem_chain_explained = 0
@@ -25,27 +25,33 @@ pully = ["rusty chain", "rotten gears"]
 gt_activated = []
 
 def start():
-    print("""\n
-    \tYou are in a castle that is under siege from a zombie hoard.
-    The castle walls and gate are holding the hoard off with no
-    difficulty but the castle is running out of food and you and your
-    people will soon starve if you stay here. At the back of the castle
-    is a drawbridge that can be used to cross a deep chasam which runs
-    behind the castle. This chasam cannot be crossed by the zombie
-    hoard and so it is by way of this drawbridge that you and your
-    people can make your escape. There is just one problem: the
-    drawbridge has not been used in decades. It is in disrepair and
-    cannot be lowerd. It must be fixed before you can escape.
-    \n\tIf you stand in the courtyard, in front of the castle gates,
-    you can see several buldings within the castle walls:
-    In the north west corner of the castle are the stables and the
-    north west gaurd tower. In the south west corner of the castle are
-    the barricks and the south west gaurd tower. In the north east
-    corner of the castle are the blacksmith\'s workshop and the north
-    east gaurd tower. In the south east corner of the castle are the
-    carpenter\'s workshop and the south east gaurd tower. In the center
-    of the castle is the Keep where the king and his family used to live.""")
+
+    string_start = f"""
+
+You are in a castle that is under siege from a zombie hoard.
+The castle walls and gate are holding the hoard off with no
+difficulty but the castle is running out of food and you and your
+people will soon starve if you stay here. At the back of the castle
+is a drawbridge that can be used to cross a deep chasam which runs
+behind the castle. This chasam cannot be crossed by the zombie
+hoard and so it is by way of this drawbridge that you and your
+people can make your escape. There is just one problem: the
+drawbridge has not been used in decades. It is in disrepair and
+cannot be lowerd. It must be fixed before you can escape.
+
+"""
+
+    #return string_start
+    print(string_start)
     courtyard()
+
+drawbridge_open: f"""
+At the castles back wall you can see the drabridge and its gaurdtower. It is lowered!
+You can now cross the chasam and escape the zombies!
+
+What would you like to do?
+
+Type \'cross\' to cross the chasam and escape to safety"""
 
 def courtyard():
     global drawbridge
@@ -55,6 +61,7 @@ def courtyard():
     global bridge_problem_gears_explained
     global wood_problem_explained
     global pully
+    global drawbridge_open
 
     while bridge_problem_chain_explained == 6:
         pully.insert(0,str("new chain"))
@@ -69,30 +76,15 @@ def courtyard():
     #print(f"------ wood_problem_explained is: {wood_problem_explained} ---------")
     #print(f"------ pully is: {pully}. ------")
     #print(f"------ gt_activated is: {gt_activated}.------")
-    print("""\n
-    You are in the castle courtyard and you can see:")
-    \t-the stables
-    \t-the barricks
-    \t-the blacksmith\'s workshop
-    \t-the carpenter\'s workshop
-    \t-the north east gaurd tower
-    \t-the south east gaurd tower
-    \t-the north west gaurd tower
-    \t-the south west gaurd tower
-    \t-The keep
-    \t-the drawbridge gaurdtower""")
 
     if drawbridge is True:
-        print("At the castles back wall you can see the drabridge and its")
-        print("gaurdtower.")
-        print("It is lowered!")
-        print("You can now cross the chasam and escape the zombies!\n")
-        print("What would you like to do?")
+        print(drawbridge_open)
         what_to_do = input("\n> ")
 
-        if "cross" in what_to_do or "chasam" in what_to_do or "escape" in what_to_do:
-            print("\nYou and your people have crossed the drawbridge and escaped")
-            print("The besiged castle! GOOD JOB!!!\n")
+        if "cross" in what_to_do:
+            print("""
+You and your people have crossed the drawbridge and escaped
+The besiged castle! GOOD JOB!!!\n""")
             exit()
         else:
             courtyard()
@@ -100,10 +92,23 @@ def courtyard():
 ## a line in a string
     else:
         print("""\n
-        \bAt the castles' back wall you can see the drawbridge gaurdtower
-        \bis currently raised.You are trapped in the castle.")
-        \nWhere would you like to go?""")
-        where_to = input("> ")
+        You are in the castle courtyard:
+        \t-type \'a\' to enter the stables
+        \t-type \'b\' to enter the barricks
+        \t-type \'c\' to enter the blacksmith\'s workshop
+        \t-type \'d\' to enter the carpenter\'s workshop
+        \t-type \'e\' to enter the north east gaurdtower
+        \t-type \'f\' to enter the south east gaurdtower
+        \t-type \'g\' to enter the north west gaurdtower
+        \t-type \'h\' to enter the south west gaurdtower
+        \t-type \'i\' to enter the keep
+        \t-type \'j\' to enter the drawbridge gaurdtower
+
+    At the castles' back wall you can see the drawbridge gaurdtower is currently raised.
+    You are trapped in the castle.
+
+    Where would you like to go?""")
+        where_to = input("\n> ")
 
         if "drawbridge" in where_to:
             drawbridge_gaurdtower()
@@ -128,7 +133,7 @@ def courtyard():
         else:
             courtyard()
 
-start()
+print(start())
 
 
 #################################################################################
