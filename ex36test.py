@@ -28,7 +28,7 @@ gt_activated = []
 
 def start():
     print("""\n
-    \tYou are in a castle that is under siege from a zombie hoard.
+    You are in a castle that is under siege from a zombie hoard.
     The castle walls and gate are holding the hoard off with no
     difficulty but the castle is running out of food and you and your
     people will soon starve if you stay here. At the back of the castle
@@ -37,16 +37,7 @@ def start():
     hoard and so it is by way of this drawbridge that you and your
     people can make your escape. There is just one problem: the
     drawbridge has not been used in decades. It is in disrepair and
-    cannot be lowerd. It must be fixed before you can escape.
-    \n\tIf you stand in the courtyard, in front of the castle gates,
-    you can see several buldings within the castle walls:
-    In the north west corner of the castle are the stables and the
-    north west gaurd tower. In the south west corner of the castle are
-    the barricks and the south west gaurd tower. In the north east
-    corner of the castle are the blacksmith\'s workshop and the north
-    east gaurd tower. In the south east corner of the castle are the
-    carpenter\'s workshop and the south east gaurd tower. In the center
-    of the castle is the Keep where the king and his family used to live.""")
+    cannot be lowerd. It must be fixed before you can escape.""")
     courtyard()
 
 def courtyard():
@@ -57,77 +48,81 @@ def courtyard():
     global bridge_problem_gears_explained
     global wood_problem_explained
     global pully
+    global drawbridge_open
 
     while bridge_problem_chain_explained == 6:
         pully.insert(0,str("new chain"))
         bridge_problem_chain_explained += 1
 
-    print("\nThe variables are:")
-    print(f"------ drawbridge is: {drawbridge}. ------")
-    print(f"------ inventory is: {inventory}. ------")
-    print(f"------ crew is: {crew}. ------")
-    print(f"------ bridge_problem_chain_explained is: {bridge_problem_chain_explained} ---------")
-    print(f"------ bridge_problem_gears_explained is: {bridge_problem_gears_explained} ---------")
-    print(f"------ wood_problem_explained is: {wood_problem_explained} ---------")
-    print(f"------ pully is: {pully}. ------")
-    print(f"------ gt_activated is: {gt_activated}.------")
-    print("\nYou are in the castle courtyard. You can hear the zombies")
-    print("moaning and screaming outside.\n")
-    print("You can see:")
-    print("the stables,")
-    print("the barricks,")
-    print("the blacksmith\'s workshop,")
-    print("the carpenter\'s workshop,")
-    print("the north east gaurd tower,")
-    print("the south east gaurd tower,")
-    print("the north west gaurd tower,")
-    print("the south west gaurd tower,")
-    print("and the Keep.")
+    #print("\nThe variables are:")
+    #print(f"------ drawbridge is: {drawbridge}. ------")
+    #print(f"------ inventory is: {inventory}. ------")
+    #print(f"------ crew is: {crew}. ------")
+    #print(f"------ bridge_problem_chain_explained is: {bridge_problem_chain_explained} ---------")
+    #print(f"------ bridge_problem_gears_explained is: {bridge_problem_gears_explained} ---------")
+    #print(f"------ wood_problem_explained is: {wood_problem_explained} ---------")
+    #print(f"------ pully is: {pully}. ------")
+    #print(f"------ gt_activated is: {gt_activated}.------")
 
     if drawbridge is True:
-        print("At the castles back wall you can see the drabridge and its")
-        print("gaurdtower.")
-        print("It is lowered!")
-        print("You can now cross the chasam and escape the zombies!\n")
-        print("What would you like to do?")
+        print("""
+At the castles back wall you can see the drabridge and its gaurdtower.
+It is lowered! You can now cross the chasam and escape the zombies!
+
+What would you like to do?
+
+Type \'cross\' to cross the chasam and escape to safety""")
         what_to_do = input("\n> ")
 
-        if "cross" in what_to_do or "chasam" in what_to_do or "escape" in what_to_do:
-            print("\nYou and your people have crossed the drawbridge and escaped")
-            print("The besiged castle! GOOD JOB!!!\n")
+        if "cross" in what_to_do:
+            print("""
+You and your people have crossed the drawbridge and escaped
+The besiged castle! GOOD JOB!!!\n""")
             exit()
         else:
             courtyard()
-
+## current task on else statement below --> Trying to figure out how to 'dedent'
+## a line in a string
     else:
-        print("At the castles' back wall you can see the drawbridge and its")
-        print("gaurdtower.")
-        print("It is currently raised.")
-        print("You are trapped in the castle.\n")
-        print("You can stay here or enter one of those buildings.")
-        print("Where would you like to go?")
-        where_to = input("> ")
+        print("""\n
+        You are in the castle courtyard:
+        \t-type \'a\' to enter the stables
+        \t-type \'b\' to enter the barricks
+        \t-type \'c\' to enter the blacksmith\'s workshop
+        \t-type \'d\' to enter the carpenter\'s workshop
+        \t-type \'e\' to enter the northeast gaurdtower
+        \t-type \'f\' to enter the southeast gaurdtower
+        \t-type \'g\' to enter the northwest gaurdtower
+        \t-type \'h\' to enter the southwest gaurdtower
+        \t-type \'i\' to enter the keep
+        \t-type \'j\' to enter the drawbridge gaurdtower
 
-        if "drawbridge" in where_to:
-            drawbridge_gaurdtower()
-        elif "nw" in where_to or "north west" in where_to:
-            nw_gaurd_tower()
-        elif "sw" in where_to or "south west" in where_to:
-            sw_gaurd_tower()
-        elif "ne" in where_to or "north east" in where_to:
-            ne_gaurd_tower()
-        elif "blacksmith" in where_to:
-            blacksmith()
-        elif "se" in where_to or "south east" in where_to:
-            se_gaurd_tower()
-        elif "carpenter" in where_to:
-            carpenter()
-        elif "keep" in where_to:
-            keep()
-        elif "stables" in where_to:
+    At the castles' back wall you can see the drawbridge gaurdtower is currently raised.
+    You are trapped in the castle.
+
+    Where would you like to go?""")
+        where_to = input("\n> ")
+
+        if "a" in where_to:
             stables()
-        elif "barricks" in where_to:
+        elif "b" in where_to:
             barricks()
+        elif "c" in where_to :
+            blacksmith()
+        elif "d" in where_to:
+            carpenter()
+        elif "e" in where_to:
+            ne_gaurd_tower()
+        elif "f" in where_to:
+            se_gaurd_tower()
+        elif "g" in where_to:
+            nw_gaurd_tower()
+        elif "h" in where_to:
+            sw_gaurd_tower()
+        elif "i" in where_to:
+            keep()
+        elif "j" in where_to:
+            drawbridge_gaurdtower()
         else:
             courtyard()
 
