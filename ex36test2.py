@@ -38,6 +38,7 @@ people can make your escape. There is just one problem: the
 drawbridge has not been used in decades. It is in disrepair and
 cannot be lowerd. It must be fixed before you can escape.
 """
+
     print(string_start)
     courtyard()
 
@@ -55,15 +56,15 @@ def courtyard():
         pully.insert(0,str("new chain"))
         bridge_problem_chain_explained += 1
 
-    #print("\nThe variables are:")
-    #print(f"------ drawbridge is: {drawbridge}. ------")
-    #print(f"------ inventory is: {inventory}. ------")
-    #print(f"------ crew is: {crew}. ------")
-    #print(f"------ bridge_problem_chain_explained is: {bridge_problem_chain_explained} ---------")
-    #print(f"------ bridge_problem_gears_explained is: {bridge_problem_gears_explained} ---------")
-    #print(f"------ wood_problem_explained is: {wood_problem_explained} ---------")
-    #print(f"------ pully is: {pully}. ------")
-    #print(f"------ gt_activated is: {gt_activated}.------")
+    print("\nThe variables are:")
+    print(f"------ drawbridge is: {drawbridge}. ------")
+    print(f"------ inventory is: {inventory}. ------")
+    print(f"------ crew is: {crew}. ------")
+    print(f"------ bridge_problem_chain_explained is: {bridge_problem_chain_explained} ---------")
+    print(f"------ bridge_problem_gears_explained is: {bridge_problem_gears_explained} ---------")
+    print(f"------ wood_problem_explained is: {wood_problem_explained} ---------")
+    print(f"------ pully is: {pully}. ------")
+    print(f"------ gt_activated is: {gt_activated}.------")
 
     if drawbridge is True:
 
@@ -75,13 +76,16 @@ What would you like to do?
 
 Type 'cross' to cross the chasam and escape to safety
 """
+
         print(string_drabridge_true)
         what_to_do = input("\n> ")
 
         if "cross" in what_to_do:
             string_cross = f"""
 You and your people have crossed the drawbridge and escaped
-The besiged castle! GOOD JOB!!!\n"""
+The besiged castle! GOOD JOB!!!
+"""
+
             print(string_cross)
             exit()
         else:
@@ -140,6 +144,7 @@ def drawbridge_gaurdtower():
     if "rusty chain" in pully and "rotten gears" in pully:
         global bridge_problem_chain_explained
         global bridge_problem_gears_explained
+
         print(f"------ pully is {pully} ---------")
         print(f"------ bridge_problem_chain_explained is {bridge_problem_chain_explained} ---------")
         print(f"------ bridge_problem_gears_explained is {bridge_problem_gears_explained} ---------")
@@ -176,7 +181,8 @@ def drawbridge_gaurdtower():
     You need the carpenter to remove the rotten gears and build
     new ones.
 
-    Would you like to stay here or go back to the courtyard?"""
+    Would you like to stay here or go back to the courtyard?
+    """
 
         print(string_elif_1)
         where_to = input("> ")
@@ -195,7 +201,8 @@ def drawbridge_gaurdtower():
     with new ones but the chain is still rusty. You need the blacksmith
     to remove the rusty chain and build a new one.
 
-    Would you like to stay here or go back to the courtyard?"""
+    Would you like to stay here or go back to the courtyard?
+    """
 
         print(string_elif_2)
         where_to = input("> ")
@@ -213,7 +220,8 @@ def drawbridge_gaurdtower():
     and you have lowered the drawbridge! You and your people are ready
     to make your escape!
 
-    Would you like to stay here or go back to the courtyard?"""
+    Would you like to stay here or go back to the courtyard?
+    """
 
         print(string_elif_3)
         where_to = input("> ")
@@ -275,7 +283,8 @@ def drawbridge_gaurdtower():
     with a new one. You will also need the carpenter to remove the
     rotten gears and replace them with new ones.
 
-    Would you like to stay here or go back to the courtyard?"""
+    Would you like to stay here or go back to the courtyard?
+    """
 
         print(string_elif_6)
         where_to = input("> ")
@@ -295,7 +304,7 @@ def drawbridge_gaurdtower():
     still needs to replace them with new ones.
 
     Would you like to stay here or go back to the courtyard?
-        """
+    """
 
         print(string_elif_7)
         where_to = input("> ")
@@ -315,7 +324,7 @@ def drawbridge_gaurdtower():
     needs to replace it with a new one.
 
     Would you like to stay here or go back to the courtyard?
-        """
+    """
 
         print(string_elif_8)
         where_to = input("> ")
@@ -334,7 +343,7 @@ def drawbridge_gaurdtower():
     chain and the rotten wooden gears but have yet to replace them.
 
     Would you like to stay here or go back to the courtyard?
-        """
+    """
 
         print(string_else)
         where_to = input("> ")
@@ -351,6 +360,7 @@ def blacksmith():
     You are in the blacksmith's workshop. You look around and see her
     working diligengly at her forge.
     """
+
     print(string_intro)
 
     if bridge_problem_chain_explained == 0:
@@ -359,6 +369,7 @@ def blacksmith():
     You can stay here or go back to the courtyard. What would you
     like to do?
     """
+
         print(string_if)
         where_to = input("> ")
 
@@ -421,6 +432,7 @@ def blacksmith():
             blacksmith()
 
     elif bridge_problem_chain_explained == 3:
+        
         string_elif_3 = """
     You can stay here, talk to the blacksmith, or go back to the
     courtyard. What would you like to do?
