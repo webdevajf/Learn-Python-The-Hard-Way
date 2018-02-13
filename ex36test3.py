@@ -782,11 +782,11 @@ def zombie_battle():
     global face_smashes
 
     string_zombie_battle_intro = """
-    The zombie chews on your mailed arm and presses its weight into you.")
-    You can hear it's newly dead teath cracking and breaking against your")
-    armor.")
+    The zombie chews on your mailed arm and presses its weight into you.
+    You can hear it's newly dead teath cracking and breaking against your
+    armor.
 
-    What will you do?")
+    What will you do?
 
     Shove the zombie away and draw your sword? (type 'shove')
     Draw your knife? (type 'knife')
@@ -797,6 +797,7 @@ def zombie_battle():
     fight = input("> ")
 
     if fight == "shove":
+
         string_if = """
     You kick the zombie in the chest to gain space. In one fluid
     motion you draw your sword from the shieth on your belt and,
@@ -944,4 +945,296 @@ def zombie_battle():
         print("You didn't do anything and the zombie ate you. Good Job!")
         exit(0)
 
-start()
+def ne_gaurd_tower():
+    global bridge_problem_chain_explained
+    global gt_activated
+
+    string_ne_gaurd_tower = """
+    You are at the top of the north east gaurd tower. You find yourself
+    next to a gaurd on duty. Looking over the tower's battlements you
+    can see the sea of shambling zombies futilely trying to break into
+    the castle.
+    """
+
+    print(string_ne_gaurd_tower)
+
+    if bridge_problem_chain_explained <= 1:
+
+        string_if = """
+    You can either stay here and look aimlesly at the writhing hoard
+    below you, shoot arrows at the zombies to relieve your boredom,
+    or you can go back to the castle courtyard. What would you like
+    to do?
+    """
+
+        print(string_if)
+        what_to_do = input("> ")
+
+        if "courtyard" in what_to_do:
+            courtyard()
+        elif "shoot" in what_to_do or "arrows" in what_to_do or "relieve" in what_to_do or "boredom" in what_to_do:
+
+            string_if_elif_1 = """
+    You pick up a bow and a quiver of arrows. You pull out an
+    arrow, knock it to the bow and pull the string back. You
+    Sight along the arrow at the head of a particularly ugly and
+    decomposed member of the walking dead and you let the arrow
+    fly. There is a wet thud, which you can hear even over the,
+    moaning of the undead, as the arrow slams through the zombies
+    skull. It crumples to the ground and disapears under the sea
+    of shambling, rotten boddies. You look up with a mischevious
+    smile at the gaurd next to you expecting to see that you've
+    impressed him with your marksmenship but are supprised to
+    find him scowling at you. You realize then that even though
+    he won't say it, because you outrank him, he's thinking that
+    you've just waisted a precious arrow that can't be retrieved.
+    You should quit showing off like a jackass and get back to
+    work.
+    """
+
+            print(string_if_elif_1)
+            ne_gaurd_tower()
+        else:
+            ne_gaurd_tower()
+
+    elif bridge_problem_chain_explained > 1 and "ne" not in gt_activated:
+
+        string_elif_1 = """
+    You can either stay here and look aimlesly at the writhing hoard
+    below you, shoot arrows at the zombies to relieve your boredom,
+    go back to the castle courtyard, or talk to the gaurd. What
+    would you like to do?
+    """
+
+        print(string_elif_1)
+        what_to_do = input("> ")
+
+        if "courtyard" in what_to_do:
+            courtyard()
+        elif "shoot" in what_to_do or "arrows" in what_to_do or "relieve" in what_to_do or "boredom" in what_to_do:
+
+            string_elif_1_elif_1 = """
+    You pick up a bow and a quiver of arrows. You pull out an
+    arrow, knock it to the bow and pull the string back. You
+    Sight along the arrow at the head of a particularly ugly and
+    decomposed member of the walking dead and you let the arrow
+    fly. There is a wet thud, which you can hear even over the,
+    moaning of the undead, as the arrow slams through the zombies
+    skull. It crumples to the ground and disapears under the sea
+    of shambling, rotten boddies. You look up with a mischevious
+    smile at the gaurd next to you expecting to see that you've
+    impressed him with your marksmenship but are supprised to
+    find him scowling at you. You realize then that even though
+    he won't say it, because you outrank him, he's thinking that
+    you've just waisted a precious arrow that can't be retrieved.
+    You should quit showing off like a jackass and get back to
+    work.
+    """
+
+            print(string_elif_1_elif_1)
+            ne_gaurd_tower()
+        elif "talk" in what_to_do or "gaurd" in what_to_do:
+
+            string_elif_1_elif_2 = """
+    You walk over to the gaurd, explain the blacsmith's need for
+    metal and politley ask him to go give her his sword. He heads
+    off to go do that. You head back to the courtyard.
+    """
+
+            print(string_elif_1_elif_2)
+            print(f"bridge_problem_chain_explained: {bridge_problem_chain_explained}.")
+            bridge_problem_chain_explained += 1
+            print(f"bridge_problem_chain_explained: {bridge_problem_chain_explained}.")
+            print(f"gt_activated: {gt_activated}.")
+            gt_activated.append("ne")
+            print(f"gt_activated: {gt_activated}.")
+            courtyard()
+        else:
+            ne_gaurd_tower()
+
+    else:
+
+        string_else = """
+    You can either stay here and look aimlesly at the writhing hoard
+    below you, shoot arrows at the zombies to relieve your boredom,
+    or you can go back to the castle courtyard. What would you like
+    to do?
+    """
+
+        print(string_else)
+        what_to_do = input("> ")
+
+        if "courtyard" in what_to_do:
+            courtyard()
+        elif "shoot" in what_to_do or "arrows" in what_to_do or "relieve" in what_to_do or "boredom" in what_to_do:
+
+            string_else_elif_1 = """
+    You pick up a bow and a quiver of arrows. You pull out an
+    arrow, knock it to the bow and pull the string back. You
+    Sight along the arrow at the head of a particularly ugly and
+    decomposed member of the walking dead and you let the arrow
+    fly. There is a wet thud, which you can hear even over the,
+    moaning of the undead, as the arrow slams through the zombies
+    skull. It crumples to the ground and disapears under the sea
+    of shambling, rotten boddies. You look up with a mischevious
+    smile at the gaurd next to you expecting to see that you've
+    impressed him with your marksmenship but are supprised to
+    find him scowling at you. You realize then that even though
+    he won't say it, because you outrank him, he's thinking that
+    you've just waisted a precious arrow that can't be retrieved.
+    You should quit showing off like a jackass and get back to
+    work.
+    """
+
+            print(string_else_elif_1)
+            ne_gaurd_tower()
+        else:
+            ne_gaurd_tower()
+
+def se_gaurd_tower():
+    global bridge_problem_chain_explained
+    global gt_activated
+
+    string_se_gaurd_tower = """
+    You are at the top of the south east gaurd tower. You find yourself
+    next to a gaurd on duty. Looking over the tower's battlements to the
+    east you can see the sea of shambling zombies futilely trying to
+    break into the castle. To the south you see the chasam over which you
+    plan to make your escape. From time to time a zombie gets pushed over
+    the chasm's edge by the weight of the hoard. They fall listless and
+    uncomprehending to the impact of their second death.
+    """
+
+    print(string_se_gaurd_tower)
+
+    if bridge_problem_chain_explained <= 1:
+
+        string_if = """
+    You can either stay here and look aimlesly at the writhing hoard
+    below you, shoot arrows at the zombies to relieve your boredom,
+    or you can go back to the castle courtyard. What would you like
+    to do?
+    """
+
+        print(string_if)
+        what_to_do = input("> ")
+
+        if "courtyard" in what_to_do:
+            courtyard()
+        elif "shoot" in what_to_do or "arrows" in what_to_do or "relieve" in what_to_do or "boredom" in what_to_do:
+            string_if_elif_1 = """
+    You pick up a bow and a quiver of arrows. You pull out an
+    arrow, knock it to the bow and pull the string back. You
+    Sight along the arrow at the head of a particularly ugly and
+    decomposed member of the walking dead and you let the arrow
+    fly. There is a wet thud, which you can hear even over the,
+    moaning of the undead, as the arrow slams through the zombies
+    skull. It crumples to the ground and disapears under the sea
+    of shambling, rotten boddies. You look up with a mischevious
+    smile at the gaurd next to you expecting to see that you've
+    impressed him with your marksmenship but are supprised to
+    find him scowling at you. You realize then that even though
+    he won't say it, because you outrank him, he's thinking that
+    you've just waisted a precious arrow that can't be retrieved.
+    You should quit showing off like a jackass and get back to
+    work.
+    """
+            se_gaurd_tower()
+        else:
+            se_gaurd_tower()
+
+    elif bridge_problem_chain_explained > 1 and "se" not in gt_activated:
+
+        string_elif = """
+    You can either stay here and look aimlesly at the writhing hoard
+    below you, shoot arrows at the zombies to relieve your boredom,
+    go back to the castle courtyard, or talk to the gaurd. What
+    would you like to do?
+    """
+
+        print(string_elif)
+        what_to_do = input("> ")
+
+        if "courtyard" in what_to_do:
+            courtyard()
+        elif "shoot" in what_to_do or "arrows" in what_to_do or "relieve" in what_to_do or "boredom" in what_to_do:
+
+            string_elif_1_elif_1 = """
+    You pick up a bow and a quiver of arrows. You pull out an
+    arrow, knock it to the bow and pull the string back. You
+    Sight along the arrow at the head of a particularly ugly and
+    decomposed member of the walking dead and you let the arrow
+    fly. There is a wet thud, which you can hear even over the,
+    moaning of the undead, as the arrow slams through the zombies
+    skull. It crumples to the ground and disapears under the sea
+    of shambling, rotten boddies. You look up with a mischevious
+    smile at the gaurd next to you expecting to see that you've
+    impressed him with your marksmenship but are supprised to
+    find him scowling at you. You realize then that even though
+    he won't say it, because you outrank him, he's thinking that
+    you've just waisted a precious arrow that can't be retrieved.
+    You should quit showing off like a jackass and get back to
+    work.
+    """
+
+            print(string_elif_1_elif_1)
+            se_gaurd_tower()
+        elif "talk" in what_to_do or "gaurd" in what_to_do:
+
+            string_elif_1_elif_2 = """
+    You walk over to the gaurd, explain the blacsmith's need for
+    metal and politley ask him to go give her his sword. He heads
+    off to go do that. You head back to the courtyard.
+    """
+
+            print(string_elif_1_elif_2)
+            print(f"bridge_problem_chain_explained: {bridge_problem_chain_explained}.")
+            bridge_problem_chain_explained += 1
+            print(f"bridge_problem_chain_explained: {bridge_problem_chain_explained}.")
+            print(f"gt_activated: {gt_activated}.")
+            gt_activated.append("se")
+            print(f"gt_activated: {gt_activated}.")
+            courtyard()
+        else:
+            se_gaurd_tower()
+
+    else:
+
+        string_else = """
+    You can either stay here and look aimlesly at the writhing hoard
+    below you, shoot arrows at the zombies to relieve your boredom,
+    or you can go back to the castle courtyard. What would you like
+    to do?
+    """
+
+        print(string_else)
+        what_to_do = input("> ")
+
+        if "courtyard" in what_to_do:
+            courtyard()
+        elif "shoot" in what_to_do or "arrows" in what_to_do or "relieve" in what_to_do or "boredom" in what_to_do:
+
+            string_else_elif_1 = """
+    You pick up a bow and a quiver of arrows. You pull out an
+    arrow, knock it to the bow and pull the string back. You
+    Sight along the arrow at the head of a particularly ugly and
+    decomposed member of the walking dead and you let the arrow
+    fly. There is a wet thud, which you can hear even over the,
+    moaning of the undead, as the arrow slams through the zombies
+    skull. It crumples to the ground and disapears under the sea
+    of shambling, rotten boddies. You look up with a mischevious
+    smile at the gaurd next to you expecting to see that you've
+    impressed him with your marksmenship but are supprised to
+    find him scowling at you. You realize then that even though
+    he won't say it, because you outrank him, he's thinking that
+    you've just waisted a precious arrow that can't be retrieved.
+    You should quit showing off like a jackass and get back to
+    work.
+    """
+
+            print(string_else_elif_1)
+            se_gaurd_tower()
+        else:
+            se_gaurd_tower()
+
+sw_gaurd_tower()
