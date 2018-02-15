@@ -66,9 +66,7 @@ def courtyard():
     print(f"------ pully is: {pully}. ------")
     print(f"------ gt_activated is: {gt_activated}.------")
 
-    if drawbridge is True:
-
-        string_drabridge_true = f"""
+    string_drabridge_true = f"""
 At the castles back wall you can see the drabridge and its gaurdtower.
 It is lowered! You can now cross the chasam and escape the zombies!
 
@@ -77,41 +75,41 @@ What would you like to do?
 Type 'cross' to cross the chasam and escape to safety
 """
 
-        print(string_drabridge_true)
-        what_to_do = input("\n> ")
-
-        if "cross" in what_to_do:
-
-            string_cross = f"""
+    string_cross = f"""
 You and your people have crossed the drawbridge and escaped
 The besiged castle! GOOD JOB!!!
 """
 
+    string_else = """
+You are in the castle courtyard:
+    -type 'a' to enter the stables
+    -type 'b' to enter the barricks
+    -type 'c' to enter the blacksmith's workshop
+    -type 'd' to enter the carpenter's workshop
+    -type 'e' to enter the northeast gaurdtower
+    -type 'f' to enter the southeast gaurdtower
+    -type 'g' to enter the northwest gaurdtower
+    -type 'h' to enter the southwest gaurdtower
+    -type 'i' to enter the keep
+    -type 'j' to enter the drawbridge gaurdtower
+
+At the castles' back wall you can see the drawbridge gaurdtower is currently raised.
+You are trapped in the castle.
+
+Where would you like to go?
+"""
+
+    if drawbridge is True:
+        print(string_drabridge_true)
+        what_to_do = input("\n> ")
+
+        if "cross" in what_to_do:
             print(string_cross)
             exit()
         else:
             courtyard()
-## current task on else statement below --> Trying to figure out how to 'dedent'
-## a line in a string
+
     else:
-        string_else = """
-    You are in the castle courtyard:
-        -type 'a' to enter the stables
-        -type 'b' to enter the barricks
-        -type 'c' to enter the blacksmith's workshop
-        -type 'd' to enter the carpenter's workshop
-        -type 'e' to enter the northeast gaurdtower
-        -type 'f' to enter the southeast gaurdtower
-        -type 'g' to enter the northwest gaurdtower
-        -type 'h' to enter the southwest gaurdtower
-        -type 'i' to enter the keep
-        -type 'j' to enter the drawbridge gaurdtower
-
-    At the castles' back wall you can see the drawbridge gaurdtower is currently raised.
-    You are trapped in the castle.
-
-    Where would you like to go?
-    """
         print(string_else)
         where_to = input("> ")
 
@@ -142,6 +140,107 @@ def drawbridge_gaurdtower():
     global pully
     global drawbridge
 
+    drawbridge_gaurdtower_string_if = """
+You are in the gaurdtower next to the drawbridge
+    -Type "a" to stay here
+    -Type "b" to go back to the courtyard
+
+HINT: You see that the pully apparatus, that raises and lowers the
+drabridge, is in disrepair. The metal chain is rusted and the wooden
+gears are rotten. The blacksmith can work with metal and the carpenter
+is the expert on wood.
+"""
+
+    drawbridge_gaurdtower_string_elif_1 = """
+You are in the gaurdtower next to the drawbridge
+    -Type "a" to stay here
+    -Type "b" to go back to the courtyard
+
+HINT:The blacksmith has replaced the rusted chain with a shiny new
+one but the wooden gears are still rotten. the carpenter is the expert
+on wood.
+"""
+
+    drawbridge_gaurdtower_string_elif_2 = """
+You are in the gaurdtower next to the drawbridge
+    -Type "a" to stay here
+    -Type "b" to go back to the courtyard
+
+HINT: The carpenter has replaced the rotten gears with new ones but the
+metal chain is still rusty. The blacksmith can work with metal.
+"""
+
+    drawbridge_gaurdtower_string_elif_3 = """
+You are in the gaurdtower next to the drawbridge
+    -Type "a" to stay here
+    -Type "b" to go back to the courtyard
+
+HINT: You see that the pully apparatus, that raises and lowers the
+drabridge, is repaired and you have lowered the drawbridge! You and
+your people are ready to make your escape!
+"""
+
+    drawbridge_gaurdtower_string_elif_4 = """
+You are in the gaurdtower next to the drawbridge
+    -Type "a" to stay here
+    -Type "b" to go back to the courtyard
+    -Type "c" to lower the drawbridge
+
+HINT: You see that the pully apparatus, that raises and lowers the
+drabridge, is repaired!
+"""
+
+    drawbridge_gaurdtower_string_elif_5 = """
+You are in the gaurdtower next to the drawbridge
+    -Type "a" to stay here
+    -Type "b" to go back to the courtyard
+
+HINT: The carpenter has removed the rotten wooden gears but they
+still need to be replaced. The rusty metal chain is still in place.
+The blacksmith can work with metal.
+"""
+
+###################
+    drawbridge_gaurdtower_string_elif_6 = """
+You are in the gaurdtower next to the drawbridge. You see that the
+pully apparatus, that raises and lowers the drabridge, is in
+disrepair. The rotten gears are still in place but the blacksmith
+has removed the rusty chain. You still need her to replace it
+with a new one. You will also need the carpenter to remove the
+rotten gears and replace them with new ones.
+
+Would you like to stay here or go back to the courtyard?
+"""
+
+    drawbridge_gaurdtower_string_elif_7 = """
+You are in the gaurdtower next to the drawbridge. You see that the
+pully apparatus, that raises and lowers the drabridge, is in
+disrepair. The blacksmith has replaced the rusted chain with a
+shiny new one. The carpenter has also removed the rotten gears but
+still needs to replace them with new ones.
+
+Would you like to stay here or go back to the courtyard?
+"""
+
+    drawbridge_gaurdtower_string_elif_8 = """
+You are in the gaurdtower next to the drawbridge. You see that the
+pully apparatus, that raises and lowers the drabridge, is in
+disrepair. The carpenter has replaced the rotten gears with new
+ones. The blacksmith has also removed the rusty chain but still
+needs to replace it with a new one.
+
+Would you like to stay here or go back to the courtyard?
+"""
+
+    drawbridge_gaurdtower_string_else = """
+You are in the gaurdtower next to the drawbridge. You see that the
+pully apparatus, that raises and lowers the drabridge, is in
+disrepair. The blacksmith and carpenter have removed the rusted
+chain and the rotten wooden gears but have yet to replace them.
+
+Would you like to stay here or go back to the courtyard?
+"""
+
     if "rusty chain" in pully and "rotten gears" in pully:
         global bridge_problem_chain_explained
         global bridge_problem_gears_explained
@@ -154,140 +253,65 @@ def drawbridge_gaurdtower():
         print(f"------ bridge_problem_chain_explained is {bridge_problem_chain_explained} ---------")
         print(f"------ bridge_problem_gears_explained is {bridge_problem_gears_explained} ---------")
 
-        string_if = """
-    You are in the gaurdtower next to the drawbridge. You see that the
-    pully apparatus, that raises and lowers the drabridge, is in
-    disrepair. The chain is rusted and the wooden gears are rotten.
-    You will need the blacksmith to remove the rusty chain and build
-    a new one. Also, you will need the carpenter to remove the rotten
-    gears and build new ones.
-
-    Would you like to stay here or go back to the courtyard?
-    """
-        print(string_if)
+        print(drawbridge_gaurdtower_string_if)
         where_to = input("> ")
 
-        if "courtyard" in where_to or "back" in where_to:
+        if "b" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
 
     elif "new chain" in pully and "rotten gears" in pully:
-
-        string_elif_1 = """
-    You are in the gaurdtower next to the drawbridge. You see that the
-    pully apparatus, that raises and lowers the drabridge, is in
-    disrepair. The blacksmith has replaced the rusted chain
-    with a shiny new one but the wooden gears are still rotten.
-    You need the carpenter to remove the rotten gears and build
-    new ones.
-
-    Would you like to stay here or go back to the courtyard?
-    """
-
-        print(string_elif_1)
+        print(drawbridge_gaurdtower_string_elif_1)
         where_to = input("> ")
 
-        if "courtyard" in where_to or "back" in where_to:
+        if "b" in where_to :
             courtyard()
         else:
             drawbridge_gaurdtower()
 
     elif "rusty chain" in pully and "new gears" in pully:
-
-        string_elif_2 = """
-    You are in the gaurdtower next to the drawbridge. You see that the
-    pully apparatus, that raises and lowers the drabridge, is in
-    disrepair. The carpenter has replaced the rotten gears
-    with new ones but the chain is still rusty. You need the blacksmith
-    to remove the rusty chain and build a new one.
-
-    Would you like to stay here or go back to the courtyard?
-    """
-
-        print(string_elif_2)
+        print(drawbridge_gaurdtower_string_elif_2)
         where_to = input("> ")
 
-        if "courtyard" in where_to or "back" in where_to:
+        if "b" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
 
     elif "new chain" in pully and "new gears" in pully and drawbridge == True:
-
-        string_elif_3 = """
-    You are in the gaurdtower next to the drawbridge. You see that the
-    pully apparatus, that raises and lowers the drabridge, is repaired
-    and you have lowered the drawbridge! You and your people are ready
-    to make your escape!
-
-    Would you like to stay here or go back to the courtyard?
-    """
-
-        print(string_elif_3)
+        print(drawbridge_gaurdtower_string_elif_3)
         where_to = input("> ")
 
-        if "courtyard" in where_to or "back" in where_to:
+        if "b" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
 
     elif "new chain" in pully and "new gears" in pully:
-
-        string_elif_4 = """
-    You are in the gaurdtower next to the drawbridge. You see that the
-    pully apparatus, that raises and lowers the drabridge, is repaired!
-    The carpenter has replaced the rotten gears with new ones and the
-    blacksmith has removed the rusty chain and replaced it with a new
-    one.
-
-    Would you like to stay here, lower the drawbridge, or go back to the
-    courtyard?
-    """
+        print(drawbridge_gaurdtower_string_elif_4)
         where_to = input("> ")
 
-        if "courtyard" in where_to or "back" in where_to:
+        if "b" in where_to:
             courtyard()
-        elif "lower" in where_to or "drawbridge" in where_to:
+        elif "c" in where_to:
             drawbridge = True
             drawbridge_gaurdtower()
         else:
             drawbridge_gaurdtower()
 
     elif "rusty chain" in pully:
-
-        string_elif_5 = """
-    You are in the gaurdtower next to the drawbridge. You see that the
-    pully apparatus, that raises and lowers the drabridge, is in
-    disrepair. The rusty chain is still in place but the carpenter has
-    removed the rotten wooden gears. You still need him to replace them
-    with new ones. You will also need the blacksmith to remove the
-    rusty chain and build a new one.
-
-    Would you like to stay here or go back to the courtyard?
-    """
-        print(string_elif_5)
+        print(drawbridge_gaurdtower_string_elif_5)
         where_to = input("> ")
 
-        if "courtyard" in where_to or "back" in where_to:
+        if "b" in where_to :
             courtyard()
         else:
             drawbridge_gaurdtower()
 
+###################
     elif "rotten gears" in pully:
-
-        string_elif_6 = """
-    You are in the gaurdtower next to the drawbridge. You see that the
-    pully apparatus, that raises and lowers the drabridge, is in
-    disrepair. The rotten gears are still in place but the blacksmith
-    has removed the rusty chain. You still need her to replace it
-    with a new one. You will also need the carpenter to remove the
-    rotten gears and replace them with new ones.
-
-    Would you like to stay here or go back to the courtyard?
-    """
-
-        print(string_elif_6)
+        print(drawbridge_gaurdtower_string_elif_6)
         where_to = input("> ")
 
         if "courtyard" in where_to or "back" in where_to:
@@ -296,18 +320,7 @@ def drawbridge_gaurdtower():
             drawbridge_gaurdtower()
 
     elif "new chain" in pully:
-
-        string_elif_7 = """
-    You are in the gaurdtower next to the drawbridge. You see that the
-    pully apparatus, that raises and lowers the drabridge, is in
-    disrepair. The blacksmith has replaced the rusted chain with a
-    shiny new one. The carpenter has also removed the rotten gears but
-    still needs to replace them with new ones.
-
-    Would you like to stay here or go back to the courtyard?
-    """
-
-        print(string_elif_7)
+        print(drawbridge_gaurdtower_string_elif_7)
         where_to = input("> ")
 
         if "courtyard" in where_to or "back" in where_to:
@@ -316,18 +329,7 @@ def drawbridge_gaurdtower():
             drawbridge_gaurdtower()
 
     elif "new gears" in pully:
-
-        string_elif_8 = """
-    You are in the gaurdtower next to the drawbridge. You see that the
-    pully apparatus, that raises and lowers the drabridge, is in
-    disrepair. The carpenter has replaced the rotten gears with new
-    ones. The blacksmith has also removed the rusty chain but still
-    needs to replace it with a new one.
-
-    Would you like to stay here or go back to the courtyard?
-    """
-
-        print(string_elif_8)
+        print(drawbridge_gaurdtower_string_elif_8)
         where_to = input("> ")
 
         if "courtyard" in where_to or "back" in where_to:
@@ -336,17 +338,7 @@ def drawbridge_gaurdtower():
             drawbridge_gaurdtower()
 
     else:
-
-        string_else = """
-    You are in the gaurdtower next to the drawbridge. You see that the
-    pully apparatus, that raises and lowers the drabridge, is in
-    disrepair. The blacksmith and carpenter have removed the rusted
-    chain and the rotten wooden gears but have yet to replace them.
-
-    Would you like to stay here or go back to the courtyard?
-    """
-
-        print(string_else)
+        print(drawbridge_gaurdtower_string_else)
         where_to = input("> ")
 
         if "courtyard" in where_to or "back" in where_to:
@@ -575,7 +567,6 @@ def nw_gaurd_tower():
 
             print(string_if_elif_1)
             nw_gaurd_tower()
-
         else:
             nw_gaurd_tower()
 
@@ -649,6 +640,7 @@ def nw_gaurd_tower():
         if "courtyard" in what_to_do:
             courtyard()
         elif "shoot" in what_to_do or "arrows" in what_to_do or "relieve" in what_to_do or "boredom" in what_to_do:
+
             string_else_elif_1 = """
     You pick up a bow and a quiver of arrows. You pull out an
     arrow, knock it to the bow and pull the string back. You
@@ -799,11 +791,11 @@ def zombie_battle():
     global face_smashes
 
     string_zombie_battle_intro = """
-    The zombie chews on your mailed arm and presses its weight into you.")
-    You can hear it's newly dead teath cracking and breaking against your")
-    armor.")
+    The zombie chews on your mailed arm and presses its weight into you.
+    You can hear it's newly dead teath cracking and breaking against your
+    armor.
 
-    What will you do?")
+    What will you do?
 
     Shove the zombie away and draw your sword? (type 'shove')
     Draw your knife? (type 'knife')
@@ -814,6 +806,7 @@ def zombie_battle():
     fight = input("> ")
 
     if fight == "shove":
+
         string_if = """
     You kick the zombie in the chest to gain space. In one fluid
     motion you draw your sword from the shieth on your belt and,
