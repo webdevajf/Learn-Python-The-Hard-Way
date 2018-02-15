@@ -66,6 +66,7 @@ Type 'cross' to cross the chasam and escape to safety
         what_to_do = input("\n> ")
 
         if "cross" in what_to_do:
+
             string_cross = f"""
 You and your people have crossed the drawbridge and escaped
 The besiged castle! GOOD JOB!!!
@@ -458,6 +459,7 @@ def blacksmith():
     She tells you that she has removed the rusty chain but that
     she still needs 2 peices of metal to make a new one.
     """
+
             print(string_elif_4_elif_1)
             blacksmith()
         else:
@@ -558,6 +560,7 @@ def nw_gaurd_tower():
 
             print(string_if_elif_1)
             nw_gaurd_tower()
+
         else:
             nw_gaurd_tower()
 
@@ -631,7 +634,6 @@ def nw_gaurd_tower():
         if "courtyard" in what_to_do:
             courtyard()
         elif "shoot" in what_to_do or "arrows" in what_to_do or "relieve" in what_to_do or "boredom" in what_to_do:
-
             string_else_elif_1 = """
     You pick up a bow and a quiver of arrows. You pull out an
     arrow, knock it to the bow and pull the string back. You
@@ -782,11 +784,11 @@ def zombie_battle():
     global face_smashes
 
     string_zombie_battle_intro = """
-    The zombie chews on your mailed arm and presses its weight into you.
-    You can hear it's newly dead teath cracking and breaking against your
-    armor.
+    The zombie chews on your mailed arm and presses its weight into you.")
+    You can hear it's newly dead teath cracking and breaking against your")
+    armor.")
 
-    What will you do?
+    What will you do?")
 
     Shove the zombie away and draw your sword? (type 'shove')
     Draw your knife? (type 'knife')
@@ -797,7 +799,6 @@ def zombie_battle():
     fight = input("> ")
 
     if fight == "shove":
-
         string_if = """
     You kick the zombie in the chest to gain space. In one fluid
     motion you draw your sword from the shieth on your belt and,
