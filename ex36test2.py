@@ -200,45 +200,45 @@ still need to be replaced. The rusty metal chain is still in place.
 The blacksmith can work with metal.
 """
 
-###################
-    drawbridge_gaurdtower_string_elif_6 = """
-You are in the gaurdtower next to the drawbridge. You see that the
-pully apparatus, that raises and lowers the drabridge, is in
-disrepair. The rotten gears are still in place but the blacksmith
-has removed the rusty chain. You still need her to replace it
-with a new one. You will also need the carpenter to remove the
-rotten gears and replace them with new ones.
 
-Would you like to stay here or go back to the courtyard?
+    drawbridge_gaurdtower_string_elif_6 = """
+You are in the gaurdtower next to the drawbridge
+    -Type "a" to stay here
+    -Type "b" to go back to the courtyard
+
+HINT: You see that the the blacksmith has removed the rusty metal
+chain but she still needs to replace it with a new one. The rotten
+gears are also still in place. The carpenter is the expert on wood.
 """
 
     drawbridge_gaurdtower_string_elif_7 = """
-You are in the gaurdtower next to the drawbridge. You see that the
-pully apparatus, that raises and lowers the drabridge, is in
-disrepair. The blacksmith has replaced the rusted chain with a
-shiny new one. The carpenter has also removed the rotten gears but
-still needs to replace them with new ones.
+You are in the gaurdtower next to the drawbridge
+    -Type "a" to stay here
+    -Type "b" to go back to the courtyard
 
-Would you like to stay here or go back to the courtyard?
+HINT: You see that the blacksmith has replaced the rusted chain with
+a shiny new one. The carpenter has also removed the rotten gears but
+still needs to replace them with new ones.
 """
 
     drawbridge_gaurdtower_string_elif_8 = """
-You are in the gaurdtower next to the drawbridge. You see that the
-pully apparatus, that raises and lowers the drabridge, is in
-disrepair. The carpenter has replaced the rotten gears with new
-ones. The blacksmith has also removed the rusty chain but still
-needs to replace it with a new one.
+You are in the gaurdtower next to the drawbridge
+    -Type "a" to stay here
+    -Type "b" to go back to the courtyard
 
-Would you like to stay here or go back to the courtyard?
+HINT: You see that the carpenter has replaced the rotten gears with new
+ones. The blacksmith has also removed the rusty metal chain but still
+needs to replace it with a new one.
 """
 
     drawbridge_gaurdtower_string_else = """
-You are in the gaurdtower next to the drawbridge. You see that the
-pully apparatus, that raises and lowers the drabridge, is in
-disrepair. The blacksmith and carpenter have removed the rusted
-chain and the rotten wooden gears but have yet to replace them.
+You are in the gaurdtower next to the drawbridge
+    -Type "a" to stay here
+    -Type "b" to go back to the courtyard
 
-Would you like to stay here or go back to the courtyard?
+You see that the pully apparatus, that raises and lowers the drabridge,
+is in disrepair. The blacksmith and carpenter have removed the rusted
+chain and the rotten wooden gears but have yet to replace them.
 """
 
     if "rusty chain" in pully and "rotten gears" in pully:
@@ -309,12 +309,11 @@ Would you like to stay here or go back to the courtyard?
         else:
             drawbridge_gaurdtower()
 
-###################
     elif "rotten gears" in pully:
         print(drawbridge_gaurdtower_string_elif_6)
         where_to = input("> ")
 
-        if "courtyard" in where_to or "back" in where_to:
+        if "b" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
@@ -323,7 +322,7 @@ Would you like to stay here or go back to the courtyard?
         print(drawbridge_gaurdtower_string_elif_7)
         where_to = input("> ")
 
-        if "courtyard" in where_to or "back" in where_to:
+        if "b" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
@@ -332,7 +331,7 @@ Would you like to stay here or go back to the courtyard?
         print(drawbridge_gaurdtower_string_elif_8)
         where_to = input("> ")
 
-        if "courtyard" in where_to or "back" in where_to:
+        if "b" in where_to:
             courtyard()
         else:
             drawbridge_gaurdtower()
@@ -349,49 +348,103 @@ Would you like to stay here or go back to the courtyard?
 def blacksmith():
     global bridge_problem_chain_explained
 
-    string_intro = """
-    You are in the blacksmith's workshop. You look around and see her
-    working diligengly at her forge.
-    """
+    blacksmith_string_intro = """
+You are in the blacksmith's workshop. You look around and see her working
+diligengly at her forge.
+"""
 
-    print(string_intro)
+    blacksmith_string_if = """
+    -Type "a" to stay here
+    -Type "b" to go back to the courtyard
+"""
+
+    blacksmith_string_elif_1 = """
+    -Type "a" to stay here,
+    -Type "b" go back to the courtyard
+    -Type "c" to talk to the blacksmith
+"""
+
+    blacksmith_string_elif_1_elif_1 = """
+You tell her about the rusty chain and she says that
+she will take it down but that she will need 4 peices of
+metal to make a chain long enough for the drawbridge. You
+head back out into the courtyard.
+"""
+
+    blacksmith_string_elif_2 = """
+    -Type "a" to stay here,
+    -Type "b" go back to the courtyard
+    -Type "c" to talk to the blacksmith
+"""
+
+    blacksmith_string_elif_2_elif_1 = """
+She tells you that she has removed the rusty chain but that
+she still needs 4 peices of metal to make a new one.
+"""
+
+    blacksmith_string_elif_3 = """
+    -Type "a" to stay here,
+    -Type "b" go back to the courtyard
+    -Type "c" to talk to the blacksmith
+"""
+
+    blacksmith_string_elif_3_elif_1 = """
+She tells you that she has removed the rusty chain but that
+she still needs 3 peices of metal to make a new one.
+"""
+
+    blacsmith_string_elif_4 = """
+    -Type "a" to stay here,
+    -Type "b" go back to the courtyard
+    -Type "c" to talk to the blacksmith
+"""
+
+    blacksmith_string_elif_4_elif_1 = """
+She tells you that she has removed the rusty chain but that
+she still needs 2 peices of metal to make a new one.
+"""
+
+    blacsmith_string_elif_5 = """
+    -Type "a" to stay here,
+    -Type "b" go back to the courtyard
+    -Type "c" to talk to the blacksmith
+"""
+
+    blacksmith_string_elif_5_elif_1 = """
+She tells you that she has removed the rusty chain but that
+she still needs 1 peice of metal to make a new one.
+"""
+
+    blacsmith_string_elif_6 = """
+    -Type "a" to stay here,
+    -Type "b" go back to the courtyard
+    -Type "c" to talk to the blacksmith
+"""
+
+    blacksmith_string_elif_6_elif_1 = """
+She tells you that she has removed the rusty chain and made
+a new one which she installed in the drawbridge gaurdtower.
+"""
+
+    print(blacksmith_string_intro)
 
     if bridge_problem_chain_explained == 0:
-
-        string_if = """
-    You can stay here or go back to the courtyard. What would you
-    like to do?
-    """
-
-        print(string_if)
+        print(blacksmith_string_if)
         where_to = input("> ")
 
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
         else:
             blacksmith()
 
     elif bridge_problem_chain_explained == 1:
-
-        string_elif_1 = """
-    You can stay here, talk to the blacksmith, or go back to the
-    courtyard. What would you like to do?
-    """
-        print(string_elif_1)
+        print(blacksmith_string_elif_1)
         where_to = input("> ")
 
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
-        elif "talk" in where_to or "blacksmith" in where_to:
-
-            string_elif_1_elif = """
-    You tell her about the rusty chain and she says that
-    she will take it down but that she will need 4 peices of
-    metal to make a chain long enough for the drawbridge. You
-    head back out into the courtyard.
-    """
-
-            print(string_elif_1_elif)
+        elif "c" in where_to:
+            print(blacksmith_string_elif_1_elif_1)
             bridge_problem_chain_explained = 2
             print(f"pully is: {pully}")
             pully.remove(str("rusty chain"))
@@ -401,119 +454,61 @@ def blacksmith():
             blacksmith()
 
     elif bridge_problem_chain_explained == 2:
-
-        string_elif_2 = """
-    You can stay here, talk to the blacksmith, or go back to the
-    courtyard. What would you like to do?
-    """
-
-        print(string_elif_2)
+        print(blacksmith_string_elif_2)
         where_to = input("> ")
 
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
-        elif "talk" in where_to or "blacksmith" in where_to:
-
-            string_elif_2_elif_1 = """
-    She tells you that she has removed the rusty chain but that
-    she still needs 4 peices of metal to make a new one.
-    """
-
-            print(string_elif_2_elif_1)
+        elif "c" in where_to:
+            print(blacksmith_string_elif_2_elif_1)
             blacksmith()
         else:
             blacksmith()
 
     elif bridge_problem_chain_explained == 3:
-
-        string_elif_3 = """
-    You can stay here, talk to the blacksmith, or go back to the
-    courtyard. What would you like to do?
-    """
-
-        print(string_elif_3)
+        print(blacksmith_string_elif_3)
         where_to = input("> ")
 
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
-        elif "talk" in where_to or "blacksmith" in where_to:
-
-            string_elif_3_elif_1 = """
-    She tells you that she has removed the rusty chain but that
-    she still needs 3 peices of metal to make a new one.
-    """
-
-            print(string_elif_3_elif_1)
+        elif "c" in where_to:
+            print(blacksmith_string_elif_3_elif_1)
             blacksmith()
         else:
             blacksmith()
 
     elif bridge_problem_chain_explained == 4:
-
-        string_elif_4 = """
-    You can stay here, talk to the blacksmith, or go back to the
-    courtyard. What would you like to do?
-    """
-
-        print(string_elif_4)
+        print(blacksmith_string_elif_4)
         where_to = input("> ")
 
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
-        elif "talk" in where_to or "blacksmith" in where_to:
-
-            string_elif_4_elif_1 = """
-    She tells you that she has removed the rusty chain but that
-    she still needs 2 peices of metal to make a new one.
-    """
-
-            print(string_elif_4_elif_1)
+        elif "c" in where_to:
+            print(blacksmith_string_elif_4_elif_1)
             blacksmith()
         else:
             blacksmith()
 
     elif bridge_problem_chain_explained == 5:
-
-        string_elif_5 = """
-    You can stay here, talk to the blacksmith, or go back to the
-    courtyard. What would you like to do?
-    """
-
-        print(string_elif_5)
+        print(blacksmith_string_elif_5)
         where_to = input("> ")
 
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
-        elif "talk" in where_to or "blacksmith" in where_to:
-            string_elif_5_elif = """
-    She tells you that she has removed the rusty chain but that
-    she still needs 1 peice of metal to make a new one.
-    """
-            print(string_elif_5_elif)
+        elif "c" in where_to:
+            print(blacksmith_string_elif_5_elif_1)
             blacksmith()
         else:
             blacksmith()
 
     elif bridge_problem_chain_explained >= 6:
-
-        string_elif_6 = """
-    You can stay here, talk to the blacksmith, or go back to the
-    courtyard. What would you like to do?
-    """
-
-        print(string_elif_6)
+        print(blacksmith_string_elif_6)
         where_to = input("> ")
 
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
-        elif "talk" in where_to or "blacksmith" in where_to:
-
-            string_elif_6_elif = """
-    She tells you that she has removed the rusty chain and made
-    a new one which she installed in the drawbridge gaurdtower.
-    """
-
-            print(string_elif_6_elif)
+        elif "c" in where_to:
+            print(blacksmith_string_elif_6_elif_1)
             blacksmith()
         else:
             blacksmith()
@@ -521,14 +516,14 @@ def blacksmith():
 def nw_gaurd_tower():
     global bridge_problem_chain_explained
     global gt_activated
-
+###################
     string_nw_gaurd_tower = """
     You are at the top of the north west gaurd tower. You find yourself
     next to a gaurd on duty. Looking over the tower's battlements you
     can see the sea of shambling zombies futilely trying to break into
     the castle.
     """
-
+###################
     print(string_nw_gaurd_tower)
 
     if bridge_problem_chain_explained <= 1:

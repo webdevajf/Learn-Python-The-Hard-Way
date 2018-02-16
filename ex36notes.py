@@ -53,7 +53,13 @@
 
 #1 figure out how to 'dedent' as opposed to 'indent' lines
 
+#2 remember that printing a var with a formated string for it's value will create
+## a different formating (vis-a-vis line spacing) than simply printing a string.
+## see ex36test4.py for examples.
+
 
 ## QUESTIONS THAT NEED ANSWERING:
 
 #1
+
+###################
