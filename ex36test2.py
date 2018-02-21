@@ -1213,51 +1213,97 @@ work.
 def carpenter():
     global bridge_problem_gears_explained
     global wood_problem_explained
-###################
-    string_intro = """
-    You are in the carpenter's workshop. You see him working in concentration
-    with his tools.
-    """
-###################
-    print(string_intro)
+
+    carpetner_string_intro = """
+You are in the carpenter's workshop. You see him working in concentration
+with his tools.
+"""
+
+    carpenter_string_if = """
+    -Type "a" to stay here,
+    -Type "b" go back to the courtyard
+"""
+
+    carpenter_string_elif_1 = """
+    -Type "a" to stay here,
+    -Type "b" go back to the courtyard
+    -Type "c" to talk to the carpenter
+"""
+
+    carpenter_string_elif_1_elif_1 = """
+You tell him about the rotten gears and he says that
+he will remove them but that he will need a more
+extensive supply of wood to construct new ones. You
+head back out into the courtyard.
+"""
+
+    carpenter_string_elif_2 = """
+    -Type "a" to stay here,
+    -Type "b" go back to the courtyard
+    -Type "c" to talk to the carpenter
+"""
+
+    carpenter_string_elif_2_elif_1 = """
+He tells you that the rotten gears have been removed from
+the pully system in the drawbridge gaurdtower but that he
+still needs the wood to make the new gears. You head back
+to the courtyard.
+"""
+
+    carpenter_string_elif_3 = """
+    -Type "a" to stay here,
+    -Type "b" go back to the courtyard
+    -Type "c" to talk to the carpenter
+"""
+
+    carpenter_string_elif_3_elif_1 = """
+He tells you that the wood from the keep's furnature was
+perfect and he takes you to look at his new gears, which he's
+obviously more than a little proud of. They're well made
+and you thank him for his work. You both agree that they're
+to big to be moved accross the courtyard by hand and that
+you'll need to get the men to load them onto a horse drawn
+wagon. You head back to the courtyard.
+"""
+
+    carpenter_string_elif_4 = """
+You have brought the men, horses and wagon to the carpenter's
+workshop so they can move the gears to the drawbridge gaurdtower.
+    -Type "a" to stay here
+    -Type "b" to talk to the carpenter
+"""
+
+    carpenter_string_elif_4_if = """
+He oversees the men moving the gears outside and then he
+directs them as they load the wooden contraptions into the
+cart. The horses pull the cart away towards the drawbridge
+gaurdtower. You watch them go as you stand in the courtyard.
+"""
+
+    carpenter_string_else = """
+    -Type "a" to stay here
+    -Type "b" to talk to go back to the courtyard
+"""
+
+    print(carpenter_string_intro)
 
     if bridge_problem_gears_explained == 0:
-
-        string_if = """
-    You can stay here or go back to the courtyard. What would you
-    like to do?
-    """
-
-        print(string_if)
+        print(carpenter_string_if)
         where_to = input("> ")
 
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
         else:
             carpenter()
 
     elif bridge_problem_gears_explained == 1:
-
-        string_elif_1 = """
-    You can stay here, talk to the carpenter, or go back to the
-    courtyard. What would you like to do?
-    """
-
-        print(string_elif_1)
+        print(carpenter_string_elif_1)
         where_to = input("> ")
 
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
-        elif "talk" in where_to or "carpenter" in where_to:
-
-            string_elif_1_elif_1 = """
-    You tell him about the rotten gears and he says that
-    he will remove them but that he will need a more
-    extensive supply of wood to construct new ones. You
-    head back out into the courtyard.
-    """
-
-            print(string_elif_1_elif_1)
+        elif "c" in where_to:
+            print(carpenter_string_elif_1_elif_1)
             bridge_problem_gears_explained = 2
             wood_problem_explained = 1
             print(f"pully is: {pully}")
@@ -1267,79 +1313,34 @@ def carpenter():
         else:
             carpenter()
     elif bridge_problem_gears_explained == 2:
-
-        string_elif_2 = """
-    You can stay here, talk to the carpenter, or go back to the
-    courtyard. What would you like to do?"
-    """
-
-        print(string_elif_2)
+        print(carpenter_string_elif_2)
         where_to = input("> ")
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
-        elif "talk" in where_to or "carpenter" in where_to:
-
-            string_elif_2_elif_1 = """
-    He tells you that the rotten gears have been removed from
-    the pully system in the drawbridge gaurdtower but that he
-    still needs the wood to make the new gears. You head back
-    to the courtyard.
-    """
-
-            print(string_elif_2_elif_1)
+        elif "c" in where_to:
+            print(carpenter_string_elif_2_elif_1)
             courtyard()
         else:
             carpenter()
 
     elif bridge_problem_gears_explained == 3:
-        string_elif_3 = """
-    You can stay here, talk to the carpenter, or go back to the
-    courtyard. What would you like to do?
-    """
-
-        print(string_elif_3)
+        print(carpenter_string_elif_3)
         where_to = input("> ")
 
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
-        elif "talk" in where_to or "carpenter" in where_to:
-
-            string_elif_3_elif_1 = """
-    He tells you that the wood from the keep's furnature was
-    perfect and he takes you to look at his new gears, which he's
-    obviously more than a little proud of. They're well made
-    and you thank him for his work. You both agree that they're
-    to big to be moved accross the courtyard by hand and that
-    you'll need to get the men to load them onto a horse drawn
-    wagon. You head back to the courtyard.
-    """
-            print(string_elif_3_elif_1)
+        elif "c" in where_to:
+            print(carpenter_string_elif_3_elif_1)
             courtyard()
         else:
             carpenter()
 
     elif bridge_problem_gears_explained == 4 and "horses" in crew and "wagon" in crew:
-
-        string_elif_4 = """
-    You have brought the men, horses and wagon to the carpenter's
-    workshop so they can move the gears to the drawbridge gaurdtower.
-    You can stay here or talk to the carpenter. What would you like
-    to do?
-    """
-
-        print(string_elif_4)
+        print(carpenter_string_elif_4)
         where_to = input("> ")
 
-        if "talk" in where_to or "carpenter" in where_to:
-
-            string_elif_4_if = """
-    He oversees the men moving the gears outside and then he
-    directs them as they load the wooden contraptions into the
-    cart. The horses pull the cart away towards the drawbridge
-    gaurdtower. You watch them go as you stand in the courtyard.
-    """
-
-            print(string_elif_4_if)
+        if "b" in where_to:
+            print(carpenter_string_elif_4_if)
             print(f"pully is: {pully}")
             pully.insert(1, str("new gears"))
             print(f"now pully is: {pully}")
@@ -1348,16 +1349,10 @@ def carpenter():
         else:
             carpenter()
     else:
-
-        string_else = """
-    You can stay here or go back to the courtyard. What would you
-    like to do?
-    """
-
-        print(string_else)
+        print(carpenter_string_else)
         where_to = input("> ")
 
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
         else:
             carpenter()
@@ -1367,87 +1362,87 @@ def keep():
     global wood_problem_explained
     global crew
 
-    string_intro = """
-    You enter the great hall of the Keep. There's a fire burning in the
-    fireplace and the room's warmth is comforting after the cold of the
-    dreary day outside. There are tapestries on the wall that remind you
-    of happier days.
-    """
+    keep_string_intro = """
+You enter the great hall of the Keep. There's a fire burning in the
+fireplace and the room's warmth is comforting after the cold of the
+dreary day outside. There are tapestries on the wall that remind you
+of happier days.
+"""
 
-    print(string_intro)
+    keep_string_if = """
+You can see the beautiful wooden banquet tables that you used to
+sit upon for the king's feasts. You miss those feasts.
+
+    -Type "a" to go stay here
+    -Type "b" to go back to the courtyard
+    -Type "c" to go down to the cript
+"""
+
+
+    keep_string_elif_1 = """
+You can see the beautiful wooden banquet tables that you used to
+sit upon for the king's feasts. These would be an adequate supply.
+of wood for the carpenter to make the gears with. Unfortunatley,
+these tables are too big for you to lift by yourself. You will
+need some help to get them to the carpenter.
+
+    -Type "a" to go stay here
+    -Type "b" to go back to the courtyard
+    -Type "c" to go down to the cript
+"""
+
+    keep_string_elif_2 = """
+The soldiers enter the great hall behind you. They open wide, the
+doors to the hall, and set about removing the wooden feasting tables.
+You quietly shed some tears thinking of all the good times you've
+had while sitting at those tables. Then you take a deep breath and
+resign yourself to the thought that they will soon be no more than
+gears in a pully in a castle that you will be leaving behind.
+
+You dry your eyes and head back out into the courtyard.
+"""
+
+    keep_string_elif_3 = """
+You can see the empty space where the banquet tables used to be.
+You feel a twinge of sadness.
+
+    -Type "a" to go stay here
+    -Type "b" to go back to the courtyard
+    -Type "c" to go down to the cript
+"""
+
+    print(keep_string_intro)
 
     if wood_problem_explained == 0:
-
-        string_if = """
-    You can see the beautiful wooden banquet tables that you used to
-    sit upon for the king's feasts. You miss those feasts.
-
-    You can stay here, go down into the cript, or go back to the courtyard.
-    Where would you like to go?
-    """
-
-        print(string_if)
+        print(keep_string_if)
         where_to = input("> ")
 
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
-        elif "cript" in where_to:
+        elif "c" in where_to:
             cript()
         else:
             keep()
 
     elif wood_problem_explained == 1 and "men" in crew:
-
-        string_elif_1 = """
-    The soldiers enter the great hall behind you. They open wide, the
-    doors to the hall, and set about removing the wooden feasting tables.
-    You quietly shed some tears thinking of all the good times you've
-    had while sitting at those tables. Then you take a deep breath and
-    resign yourself to the thought that they will soon be no more than
-    gears in a pully in a castle that you will be leaving behind.
-
-    You dry your eyes and head back out into the courtyard.
-    """
-
-        print(string_elif_1)
+        print(keep_string_elif_2)
         bridge_problem_gears_explained = 3
         wood_problem_explained = 2
         courtyard()
 
     elif wood_problem_explained == 1:
-
-        string_elif_1 = """
-    You can see the beautiful wooden banquet tables that you used to
-    sit upon for the king's feasts. These would be an adequate supply.
-    of wood for the carpenter to make the gears with. Unfortunatley,
-    these tables are too big for you to lift by yourself. You will
-    need some help to get them to the carpenter.
-
-    You can stay here, go down into the cript, or go back to the courtyard.
-    Where would you like to go?
-    """
-
-        print(string_elif_1)
+        print(keep_string_elif_1)
         where_to = input("> ")
 
-        if "courtyard" in where_to:
+        if "b" in where_to:
             courtyard()
-        elif "cript" in where_to:
+        elif "c" in where_to:
             cript()
         else:
             keep()
 
     elif wood_problem_explained == 2:
-
-        string_elif_2 = """
-    You can see the empty space where the banquet tables used to be.
-    You feel a twinge of sadness.
-
-    You can stay here, go down into the cript, or go back to the courtyard.
-    Where would you like to go?
-    """
-
-        print(string_elif_2)
+        print(keep_string_elif_3)
         where_to = input("> ")
 
         if "courtyard" in where_to:
@@ -1458,34 +1453,34 @@ def keep():
             keep()
 
 def cript():
-
+###################
     string_intro = """
-    You enter the cript. It is dark and oppressive, lit by only a single torch.
-    Here you find the graves of the king, his family, and their ancestors.
-    You sigh with sorrow as you think upon the tragic death of your late
-    ruller and his family. It was you who found them. Late one night when
-    you rushed up to thier chambers to deliver a message that had been brought
-    by raven. You stood outside the door of thier family common room. The king
-    had been ill of late, so it was nothing surprising when you heard moans comming
-    from within the room, but then you heard a crunch and a scream! You rushed
-    headlong into the room to a sceen of utter horror! The royal prince and
-    princess lay upon the floor in pools of their own blood. The princess
-    was dead and the the prince was gurgling the last of his raggad, bloody
-    breaths. On the other side of the room the king, now a zombie, lay over
-    his wife's body chewing at her ruined throat. You cut off his head and
-    quickly decapitated the other boddies to stop an outbreak. To this day
-    none know how the king had gotten bitten nor why he didn't tell his
-    trusted advisors. Three days later the Zombie hoard appeard on the
-    horizon and it fell to you to oversee the castle's defenses.
+You enter the cript. It is dark and oppressive, lit by only a single torch.
+Here you find the graves of the king, his family, and their ancestors.
+You sigh with sorrow as you think upon the tragic death of your late
+ruller and his family. It was you who found them. Late one night when
+you rushed up to thier chambers to deliver a message that had been brought
+by raven. You stood outside the door of thier family common room. The king
+had been ill of late, so it was nothing surprising when you heard moans comming
+from within the room, but then you heard a crunch and a scream! You rushed
+headlong into the room to a sceen of utter horror! The royal prince and
+princess lay upon the floor in pools of their own blood. The princess
+was dead and the the prince was gurgling the last of his raggad, bloody
+breaths. On the other side of the room the king, now a zombie, lay over
+his wife's body chewing at her ruined throat. You cut off his head and
+quickly decapitated the other boddies to stop an outbreak. To this day
+none know how the king had gotten bitten nor why he didn't tell his
+trusted advisors. Three days later the Zombie hoard appeard on the
+horizon and it fell to you to oversee the castle's defenses.
 
-    You can stay here, or go back up to the great hall of the Keep.
-    Where would you like to go?
-    """
-
+    -Type "a" to stay here
+    -Type "b" to go back up to the great hall of the Keep
+"""
+###################
     print(string_intro)
     where_to = input("> ")
 
-    if "eep" in where_to or "up" in where_to or "back" in where_to or "hall" in where_to:
+    if "b" in where_to:
         keep()
     else:
         cript()
@@ -1494,90 +1489,80 @@ def barricks():
     global wood_problem_explained
     global crew
 
+    barricks_string_if = """
+The barricks is so quiet when it's empty. You head back into the
+courtyard.
+"""
+
+    barricks_string_elif_1 = """
+You call the soldiers to attention. They form up and you explain
+to them that the carpenter needs the wood from the banquet tables
+in the keep. They fall in line and you take them to the Keep.
+"""
+
+    barricks_string_elif_2 = """
+The barricks is so quiet when it's empty. You head back into the
+courtyard.
+"""
+
+    barricks_string_else = """
+You walk into the barricks. The off duty soldiers are standing around
+chatting, sitting and playing cards, or laying in their bunks. It's
+good to see the men are healthy despite the troubles that surround them.
+You feel proud of them as you head back out to the courtyard.
+"""
+
     if wood_problem_explained == 1 and "men" in crew:
-
-        string_if = """
-    The barricks is so quiet when it's empty. It's good that the soldiers
-    are occupied with work and not stuck in here ruminating on the doom
-    outside the castle walls. You head back into the courtyard.
-    """
-
-        print(string_if)
+        print(barricks_string_if)
         courtyard()
     elif wood_problem_explained == 1:
-
-        string_elif_1 = """
-    You call the soldiers to attention. They form up and you explain
-    to them that the carpenter needs the wood from the banquet tables
-    in the keep. They fall in line and you take them to the Keep.
-    """
-
-        print(string_elif_1)
+        print(barricks_string_elif_1)
         crew.append("men")
         keep()
     elif wood_problem_explained == 2:
-
-        string_elif_2 = """
-    The barricks is so quiet when it's empty. It's good that the soldiers
-    are occupied with work and not stuck in here ruminating on the doom
-    outside the castle walls. You head back into the courtyard.
-    """
-
-        print(string_elif_2)
+        print(barricks_string_elif_2)
         courtyard()
     else:
-
-        string_else = """
-    You walk into the barricks. The off duty soldiers are standing around
-    chatting, sitting and playing cards, or laying in their bunks.
-    It's good to see the men are healthy despite the troubles that
-    surround them. You feel proud of them as you head back out to
-    the courtyard.
-    """
-
-        print(string_else)
+        print(barricks_string_else)
         courtyard()
 
 def stables():
     global bridge_problem_gears_explained
 
+    stables_string_if = """
+You walk into the stables. Outside you saw an open wagon that a
+pesant used to bring grain into the castle before the hoard arrived.
+It's a good thing that grain arrived in time or else the horses would
+have starved weeks ago. Inside the stables you see the creatures
+lounging in their stalls, peacfully unaware of the horrors outside.
+You head back out to the courtyard.
+"""
+
+    stables_string_elif_1 = """
+You enter the stables with the soldiers and they set about pulling
+the horses out of their pens. They bring the horses out of the
+stables and harness a team of them to the wagon. You are in the
+courtyard.
+"""
+
+    stables_string_else = """
+You walk into the empty stables. The horses are out being used
+for work. There's nothing in here. You head back out to the
+courtyard.
+"""
+
     if bridge_problem_gears_explained < 3:
-
-        string_if = """
-    You walk into the stables. Outside you saw an open wagon that a
-    pesant used to bring grain into the castle before the hoard arrived.
-    It's a good thing that grain arrived in time or else the horses would
-    have starved weeks ago. Inside the stables you see the creatures
-    lounging in their stalls, peacfully unaware of the horrors outside.
-    You head back out to the courtyard.
-    """
-
-        print(string_if)
+        print(stables_string_if)
         courtyard()
     elif bridge_problem_gears_explained == 3:
-
-        string_elif_1 = """
-    You enter the stables with the soldiers and they set about pulling
-    the horses out of their pens. They bring the horses out of the
-    stables and harness a team of them to the wagon. You are in the
-    courtyard.
-    """
-
-        print(string_elif_1)
+        print(stables_string_elif_1)
         crew.append("horses")
         crew.append("wagon")
         bridge_problem_gears_explained = 4
         courtyard()
 
     else:
-
-        string_else = """
-    You walk into the empty stables. The horses are out being used
-    for work. There's nothing in here. You head back out to the
-    courtyard.
-    """
-
-        print(string_else)
+        print(stables_string_else)
         courtyard()
 
 start()
