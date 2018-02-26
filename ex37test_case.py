@@ -1,20 +1,28 @@
 from sys import argv
 
-script, filename = argv
+(script, filename) = argv
 
-txt = open(filename, 'r+')
+with open(filename, 'r+') as txt:
 
-print(f"\nfirst, Here's your file {filename}:\n")
-print(txt.read())
+    print(f"\nfirst, Here's your file {filename}:\n")
+    print(txt.read())
+    txt.seek(0)
+    data = txt.read()
+    w = ""
+    if data == "a":
+        w += "1"
+    else:
+        w += "a"
 
-w = "a, b, c"
+    txt.seek(0)
+    txt.truncate()
+    print(f"\nsecond, Here's your file {filename}:\n")
+    print(txt.read())
 
-txt.truncate(0)
-print(f"\nsecond, Here's your file {filename}:\n")
-print(txt.read())
+    print(f"\nthird, Here's your file {filename}:\n")
+    txt.write(w)
+    txt.close()
 
-print(f"\nthird, Here's your file {filename}:\n")
-print(txt.write(w))
-print(txt.read())
-
-txt.close()
+with open(filename, 'r+') as txt:
+    print(txt.read())
+    txt.close()
